@@ -1,0 +1,42 @@
+[
+  {
+    "id": "hb-1", "numero": 1, "ataque": "Soco ao rosto (Eolgul Jireugi)",
+    "passos": [
+      { "papel": "atacante", "descricao": "Passo para a frente em Apkubi + soco ao rosto", "techniqueIds": ["sq-apkubi", "at-eolgul-jireugi"] },
+      { "papel": "defensor", "descricao": "Recua para Dwitkubi + bloqueio alto (Eolgul Makgi)", "techniqueIds": ["sq-dwitkubi", "bl-eolgul-makgi"] },
+      { "papel": "defensor", "descricao": "Avança + contra-ataque: soco médio", "techniqueIds": ["at-momtong-jireugi"] }
+    ]
+  },
+  {
+    "id": "hb-2", "numero": 2, "ataque": "Soco ao corpo (Momtong Jireugi)",
+    "passos": [
+      { "papel": "atacante", "descricao": "Passo em Apkubi + soco ao tronco", "techniqueIds": ["sq-apkubi", "at-momtong-jireugi"] },
+      { "papel": "defensor", "descricao": "Recua para Dwitkubi + bloqueio de fora para dentro (An Makgi)", "techniqueIds": ["sq-dwitkubi", "bl-an-makgi"] },
+      { "papel": "defensor", "descricao": "Avança + pontapé frontal + soco ao rosto", "techniqueIds": ["ck-ap-chagi", "at-eolgul-jireugi"] }
+    ]
+  },
+  {
+    "id": "hb-3", "numero": 3, "ataque": "Pontapé frontal (Ap Chagi)",
+    "passos": [
+      { "papel": "atacante", "descricao": "Pontapé frontal ao corpo", "techniqueIds": ["ck-ap-chagi"] },
+      { "papel": "defensor", "descricao": "Recua + bloqueio baixo (Arae Makgi)", "techniqueIds": ["bl-arae-makgi"] },
+      { "papel": "defensor", "descricao": "Contra-ataque: pontapé circular ao corpo", "techniqueIds": ["ck-dollyo-chagi"] }
+    ]
+  },
+  {
+    "id": "hb-4", "numero": 4, "ataque": "Pontapé circular (Dollyo Chagi)",
+    "passos": [
+      { "papel": "atacante", "descricao": "Pontapé circular ao corpo", "techniqueIds": ["ck-dollyo-chagi"] },
+      { "papel": "defensor", "descricao": "Recua + bloqueio de dentro para fora (Bakkat Makgi)", "techniqueIds": ["bl-bakat-makgi"] },
+      { "papel": "defensor", "descricao": "Contra-ataque: pontapé lateral", "techniqueIds": ["ck-yeop-chagi"] }
+    ]
+  },
+  {
+    "id": "hb-5", "numero": 5, "ataque": "Pontapé descendente (Naeryeo Chagi)",
+    "passos": [
+      { "papel": "atacante", "descricao": "Pontapé descendente ao ombro/cabeça", "techniqueIds": ["ck-naeryeo-chagi"] },
+      { "papel": "defensor", "descricao": "Desvia para o lado com Beom Seogi", "techniqueIds": ["sq-beom"] },
+      { "papel": "defensor", "descricao": "Contra-ataque: pontapé para trás", "techniqueIds": ["ck-dwit-chagi"] }
+    ]
+  }
+]

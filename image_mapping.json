@@ -1,0 +1,40 @@
+﻿{
+  "_instrucoes": "Preenche cada ID com o nome do ficheiro. Null = sem imagem.",
+  "tecnica_para_imagem": {
+    "sq-charyeot":  "stance1a.jpg",
+    "sq-narani":    "stance10b.jpg",
+    "sq-juchum":    "stance4alt.jpg",
+    "sq-ap":        "stance2a.jpg",
+    "sq-apkubi":    "stance3e.jpg",
+    "sq-dwitkubi":  "stance6alt.jpg",
+    "sq-beom":      "stance5c.jpg",
+    "sq-koa":       "stance7e.jpg",
+
+    "at-momtong-jireugi": null,
+    "at-eolgul-jireugi":  null,
+    "at-arae-jireugi":    null,
+    "at-dubeon-jireugi":  null,
+    "at-sonnal-chigi":    null,
+    "at-deung-jumeok":    null,
+    "at-palkup-chigi":    null,
+    "at-pyeonsonkeut":    null,
+
+    "bl-arae-makgi":    "block1.jpg",
+    "bl-momtong-makgi": "block2.jpg",
+    "bl-eolgul-makgi":  "block3.jpg",
+    "bl-an-makgi":      "block15.jpg",
+    "bl-bakat-makgi":   "block4.jpg",
+    "bl-sonnal-makgi":  "block5b.jpg",
+    "bl-hecho-makgi":   "block13a.jpg",
+    "bl-gawi-makgi":    "block14b.jpg",
+
+    "ck-ap-chagi":      null,
+    "ck-dollyo-chagi":  null,
+    "ck-yeop-chagi":    null,
+    "ck-dwit-chagi":    null,
+    "ck-naeryeo-chagi": null,
+    "ck-bandal-chagi":  null,
+    "ck-huryeo-chagi":  null,
+    "ck-dwit-huryeo":   null
+  }
+}

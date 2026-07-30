@@ -1,0 +1,12 @@
+# Dependências — regeneradas com pnpm install
+node_modules/
+
+# Imagens descarregadas pelo scraper (staging area, ficheiros grandes)
+downloaded_images/
+
+# Ficheiros de sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

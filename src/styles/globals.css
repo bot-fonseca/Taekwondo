@@ -1,0 +1,46 @@
+/* ── Taekwondo terminology app — design tokens ───────────────── */
+:root {
+  --tkd-bg: #1C2128;          /* carvão / charcoal */
+  --tkd-surface: #232A33;     /* superfície de cartões */
+  --tkd-surface-2: #2B333D;   /* superfície elevada / hover */
+  --tkd-text: #F2EFE6;        /* branco quebrado */
+  --tkd-muted: #8B8F94;       /* texto secundário / divisores */
+  --tkd-red: #B23A34;         /* acento vermelho (Taegeukgi) */
+  --tkd-red-soft: rgba(178, 58, 52, 0.14);
+  --tkd-blue: #2B5A82;        /* acento azul (Taegeukgi) */
+  --tkd-blue-soft: rgba(43, 90, 130, 0.16);
+  --tkd-border: rgba(139, 143, 148, 0.18);
+
+  --font-display: 'Oswald', system-ui, sans-serif;
+  --font-body: 'Source Sans 3', system-ui, sans-serif;
+  --font-kr: 'Noto Sans KR', 'Source Sans 3', sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--tkd-bg);
+  color: var(--tkd-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Utility font families */
+.font-display { font-family: var(--font-display); letter-spacing: 0.02em; }
+.font-body { font-family: var(--font-body); }
+.font-kr { font-family: var(--font-kr); }
+
+/* Visible keyboard focus for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--tkd-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Hide scrollbars on horizontal filter rails but keep scrolling */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

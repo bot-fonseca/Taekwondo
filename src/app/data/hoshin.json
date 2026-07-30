@@ -1,0 +1,46 @@
+[
+  {
+    "id": "hs-1", "situacao": "Agarrão ao pulso único",
+    "passos": [
+      { "descricao": "Rodar o pulso para dentro, em direção ao polegar do adversário (ponto mais fraco do agarrão)", "techniqueIds": [] },
+      { "descricao": "Puxar bruscamente para baixo e para trás, libertando o pulso", "techniqueIds": [] },
+      { "descricao": "Contra-ataque: golpe de cotovelo ao rosto ou corpo", "techniqueIds": ["at-palkup-chigi"] }
+    ]
+  },
+  {
+    "id": "hs-2", "situacao": "Agarrão ao pulso duplo",
+    "passos": [
+      { "descricao": "Elevar ambos os braços juntos até ao nível dos ombros", "techniqueIds": [] },
+      { "descricao": "Rodar bruscamente para um dos lados, separando os pulsos", "techniqueIds": [] },
+      { "descricao": "Contra-ataque: golpe de cotovelo ao corpo", "techniqueIds": ["at-palkup-chigi"] }
+    ]
+  },
+  {
+    "id": "hs-3", "situacao": "Agarrão ao colarinho",
+    "passos": [
+      { "descricao": "Cobrir a mão do adversário com as duas mãos, imobilizando-a", "techniqueIds": [] },
+      { "descricao": "Torcer o pulso em direção ao cotovelo do adversário (chave de pulso)", "techniqueIds": [] },
+      { "descricao": "Pressionar para baixo para desequilibrar o adversário", "techniqueIds": [] },
+      { "descricao": "Contra-ataque: pontapé frontal ou golpe de cutelo ao pescoço", "techniqueIds": ["ck-ap-chagi", "at-sonnal-chigi"] }
+    ]
+  },
+  {
+    "id": "hs-4", "situacao": "Estrangulamento frontal",
+    "passos": [
+      { "descricao": "Encolher o queixo imediatamente para proteger a garganta", "techniqueIds": [] },
+      { "descricao": "Elevar ambos os braços por dentro e para cima, abrindo as mãos do adversário", "techniqueIds": [] },
+      { "descricao": "Simultâneo: joelho ao baixo ventre ou pontapé ao joelho", "techniqueIds": ["ck-ap-chagi"] },
+      { "descricao": "Golpe de cotovelo ao queixo ou soco ao rosto", "techniqueIds": ["at-palkup-chigi", "at-eolgul-jireugi"] }
+    ]
+  },
+  {
+    "id": "hs-5", "situacao": "Estrangulamento traseiro",
+    "passos": [
+      { "descricao": "Encolher o queixo e baixar o centro de gravidade (dobrar os joelhos)", "techniqueIds": [] },
+      { "descricao": "Dar um passo largo para o lado, saindo da linha de pressão", "techniqueIds": [] },
+      { "descricao": "Golpe de cotovelo para trás ao solar plexus", "techniqueIds": ["at-palkup-chigi"] },
+      { "descricao": "Cabeçada para trás ao rosto do adversário", "techniqueIds": [] },
+      { "descricao": "Varrer a perna e contra-atacar em terra", "techniqueIds": ["ck-ap-chagi"] }
+    ]
+  }
+]
