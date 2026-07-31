@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { CATEGORIES, TECHNIQUES } from "../../data/taekwondo";
-import { HANBEON, setHanbeon, type HanbeonStep } from "../../data/pratica";
+import { HANBEON, setHanbeon, BELTS, type HanbeonStep } from "../../data/pratica";
 import { saveResource, DEV_ONLY_MSG } from "../../hooks/useAdminSave";
+import { BeltStrip } from "../BeltStrip";
 import { DetailHeader } from "./DetailHeader";
 
 const ROLES: { value: HanbeonStep["papel"]; label: string }[] = [
@@ -42,14 +43,16 @@ function TechniqueMultiPicker({ values, onChange }: { values: string[]; onChange
   );
 }
 
-export function HanbeonEditor({ editId, onSaved, onCancel }: {
+export function HanbeonEditor({ editId, prefillBelt, onSaved, onCancel }: {
   editId?: string;
+  prefillBelt?: string;
   onSaved: (id: string) => void;
   onCancel: () => void;
 }) {
   const existing = editId ? HANBEON.find(h => h.id === editId) : undefined;
 
   const [ataque, setAtaque] = useState(existing?.ataque ?? "");
+  const [belt, setBelt]     = useState(existing?.belt ?? prefillBelt ?? "");
   const [passos, setPassos] = useState<HanbeonStep[]>(
     existing?.passos.length ? existing.passos : [newStep()]
   );
@@ -66,7 +69,7 @@ export function HanbeonEditor({ editId, onSaved, onCancel }: {
     if (!ataque.trim() || saving) return;
     setSaving(true);
     try {
-      const entry = { id: editId ?? `hb-c-${Date.now()}`, numero: editId ? (existing?.numero ?? HANBEON.length + 1) : HANBEON.length + 1, ataque: ataque.trim(), passos };
+      const entry = { id: editId ?? `hb-c-${Date.now()}`, numero: editId ? (existing?.numero ?? HANBEON.length + 1) : HANBEON.length + 1, ataque: ataque.trim(), belt: belt || undefined, passos };
       const updated = editId ? HANBEON.map(h => h.id === editId ? entry : h) : [...HANBEON, entry];
       await saveResource("hanbeon", updated);
       setHanbeon(updated);
@@ -86,6 +89,25 @@ export function HanbeonEditor({ editId, onSaved, onCancel }: {
           <input type="text" placeholder="Ex: Soco ao rosto" value={ataque} onChange={e => setAtaque(e.target.value)}
             className="w-full rounded-xl px-4 py-3"
             style={{ background: "var(--tkd-surface)", border: "1px solid var(--tkd-border)", color: "var(--tkd-text)", fontSize: 15 }} />
+        </div>
+
+        <div>
+          <label className="font-display block mb-1.5" style={{ fontSize: 11, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--tkd-muted)" }}>Cinto</label>
+          <div className="flex flex-wrap gap-1.5">
+            <button type="button" onClick={() => setBelt("")}
+              className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 font-display transition-colors"
+              style={{ fontSize: 10, letterSpacing: "0.04em", textTransform: "uppercase", background: !belt ? "var(--tkd-surface)" : "transparent", color: !belt ? "var(--tkd-text)" : "var(--tkd-muted)", border: `1px solid ${!belt ? "var(--tkd-muted)" : "var(--tkd-border)"}` }}>
+              Nenhum
+            </button>
+            {BELTS.map(b => (
+              <button key={b.id} type="button" onClick={() => setBelt(b.id)}
+                className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 font-display transition-colors"
+                style={{ fontSize: 10, letterSpacing: "0.04em", textTransform: "uppercase", background: belt === b.id ? b.color + "22" : "transparent", color: belt === b.id ? b.color : "var(--tkd-muted)", border: `1px solid ${belt === b.id ? b.color : "var(--tkd-border)"}` }}>
+                <BeltStrip color={b.color} stripe={b.stripe} width={22} height={6} />
+                {b.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div>

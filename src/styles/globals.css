@@ -10,10 +10,26 @@
   --tkd-blue: #2B5A82;        /* acento azul (Taegeukgi) */
   --tkd-blue-soft: rgba(43, 90, 130, 0.16);
   --tkd-border: rgba(139, 143, 148, 0.18);
+  --tkd-nav-bg: rgba(28, 33, 40, 0.93);
 
   --font-display: 'Oswald', system-ui, sans-serif;
   --font-body: 'Source Sans 3', system-ui, sans-serif;
   --font-kr: 'Noto Sans KR', 'Source Sans 3', sans-serif;
+}
+
+/* ── Modo claro ──────────────────────────────────────────────── */
+html.light {
+  --tkd-bg: #EEE9DF;
+  --tkd-surface: #FFFFFF;
+  --tkd-surface-2: #F5F1E8;
+  --tkd-text: #1C2128;
+  --tkd-muted: #6E7480;
+  --tkd-red: #B23A34;
+  --tkd-red-soft: rgba(178, 58, 52, 0.10);
+  --tkd-blue: #2B5A82;
+  --tkd-blue-soft: rgba(43, 90, 130, 0.12);
+  --tkd-border: rgba(28, 33, 40, 0.12);
+  --tkd-nav-bg: rgba(238, 233, 223, 0.94);
 }
 
 html,

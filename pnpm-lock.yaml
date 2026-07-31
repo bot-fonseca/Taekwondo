@@ -101,9 +101,6 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: 1.1.8
         version: 1.1.8(@types/react@19.2.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@rollup/rollup-win32-x64-msvc':
-        specifier: ^4.62.3
-        version: 4.62.3
       canvas-confetti:
         specifier: 1.9.4
         version: 1.9.4
@@ -3458,7 +3455,8 @@ snapshots:
   '@rollup/rollup-win32-x64-gnu@4.62.3':
     optional: true
 
-  '@rollup/rollup-win32-x64-msvc@4.62.3': {}
+  '@rollup/rollup-win32-x64-msvc@4.62.3':
+    optional: true
 
   '@tailwindcss/node@4.1.12':
     dependencies:

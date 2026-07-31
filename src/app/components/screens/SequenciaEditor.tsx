@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useSequencias } from "../../hooks/useSequencias";
 import { TECHNIQUES, CATEGORIES } from "../../data/taekwondo";
-import { SEQUENCIAS, type SequenciaStep } from "../../data/pratica";
+import { SEQUENCIAS, BELTS, type SequenciaStep } from "../../data/pratica";
+import { BeltStrip } from "../BeltStrip";
 import { DetailHeader } from "./DetailHeader";
 
 function newStep(): SequenciaStep {
@@ -35,17 +36,19 @@ function TechniquePicker({ value, onChange }: { value?: string; onChange: (id?: 
   );
 }
 
-export function SequenciaEditor({ editId, onSaved, onCancel }: {
+export function SequenciaEditor({ editId, prefillBelt, onSaved, onCancel }: {
   editId?: string;
+  prefillBelt?: string;
   onSaved: (id: string) => void;
   onCancel: () => void;
 }) {
   const { criar, editar } = useSequencias();
   const existing = editId ? SEQUENCIAS.find(s => s.id === editId) : undefined;
 
-  const [nome, setNome] = useState(existing?.nome ?? "");
+  const [nome, setNome]         = useState(existing?.nome ?? "");
   const [descricao, setDescricao] = useState(existing?.descricao ?? "");
-  const [passos, setPassos] = useState<SequenciaStep[]>(
+  const [belt, setBelt]           = useState(existing?.belt ?? prefillBelt ?? "");
+  const [passos, setPassos]       = useState<SequenciaStep[]>(
     existing?.passos.length ? existing.passos : [newStep()]
   );
   const [saving, setSaving] = useState(false);
@@ -72,10 +75,10 @@ export function SequenciaEditor({ editId, onSaved, onCancel }: {
     const limpos = passos.filter(p => p.descricao.trim());
     try {
       if (editId) {
-        await editar(editId, nome.trim(), descricao.trim(), limpos);
+        await editar(editId, nome.trim(), descricao.trim(), limpos, belt || undefined);
         onSaved(editId);
       } else {
-        const nova = await criar(nome.trim(), descricao.trim(), limpos);
+        const nova = await criar(nome.trim(), descricao.trim(), limpos, belt || undefined);
         onSaved(nova.id);
       }
     } catch (err: any) {
@@ -118,6 +121,26 @@ export function SequenciaEditor({ editId, onSaved, onCancel }: {
             className="w-full rounded-xl px-4 py-3"
             style={{ background: "var(--tkd-surface)", border: "1px solid var(--tkd-border)", color: "var(--tkd-text)", fontSize: 14 }}
           />
+        </div>
+
+        {/* Cinto */}
+        <div>
+          <label className="font-display block mb-1.5" style={{ fontSize: 11, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--tkd-muted)" }}>Cinto</label>
+          <div className="flex flex-wrap gap-1.5">
+            <button type="button" onClick={() => setBelt("")}
+              className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 font-display transition-colors"
+              style={{ fontSize: 10, letterSpacing: "0.04em", textTransform: "uppercase", background: !belt ? "var(--tkd-surface)" : "transparent", color: !belt ? "var(--tkd-text)" : "var(--tkd-muted)", border: `1px solid ${!belt ? "var(--tkd-muted)" : "var(--tkd-border)"}` }}>
+              Nenhum
+            </button>
+            {BELTS.map(b => (
+              <button key={b.id} type="button" onClick={() => setBelt(b.id)}
+                className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 font-display transition-colors"
+                style={{ fontSize: 10, letterSpacing: "0.04em", textTransform: "uppercase", background: belt === b.id ? b.color + "22" : "transparent", color: belt === b.id ? b.color : "var(--tkd-muted)", border: `1px solid ${belt === b.id ? b.color : "var(--tkd-border)"}` }}>
+                <BeltStrip color={b.color} stripe={b.stripe} width={22} height={6} />
+                {b.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Passos */}

@@ -15,12 +15,11 @@ export function TechniquesScreen({ onOpen, onNova }: {
   onOpen: (id: string) => void;
   onNova: () => void;
 }) {
-  const [filter, setFilter] = useState<CategoryId | "all">("all");
+  const [filter, setFilter] = useState<CategoryId>("seogi");
   const { isAdmin } = useAdmin();
 
   const list = useMemo(() => {
-    const all = TECHNIQUES.map(t => ({ ...t, isCustom: !t.id.startsWith('custom-') ? false as const : true as const }));
-    return filter === "all" ? all : all.filter(t => t.category === filter);
+    return TECHNIQUES.filter(t => t.category === filter);
   }, [filter, TECHNIQUES.length]);
 
   return (
@@ -38,8 +37,7 @@ export function TechniquesScreen({ onOpen, onNova }: {
       </div>
 
       {/* Filtro por categoria */}
-      <div className="no-scrollbar -mx-4 px-4 flex gap-2 overflow-x-auto pb-1 mb-4">
-        <FilterChip active={filter === "all"} onClick={() => setFilter("all")} label="Todas" korean="전체" />
+      <div className="flex flex-wrap gap-2 mb-4">
         {CATEGORIES.map((c) => (
           <FilterChip key={c.id} active={filter === c.id} onClick={() => setFilter(c.id)} label={c.label} korean={c.roman} />
         ))}
@@ -54,7 +52,7 @@ export function TechniquesScreen({ onOpen, onNova }: {
               className="w-full text-left rounded-xl px-4 py-3 flex items-center gap-3"
               style={{ background: "var(--tkd-surface)", border: "1px solid var(--tkd-border)" }}
             >
-              <span className="shrink-0 rounded-md" style={{ width: 6, height: 40, background: t.isCustom ? "var(--tkd-blue)" : "var(--tkd-red)" }} />
+              <span className="shrink-0 rounded-md" style={{ width: 6, height: 40, background: "var(--tkd-red)" }} />
               <div className="flex-1 min-w-0">
                 <HangulPair hangul={t.hangul} roman={t.roman} size="sm" />
                 <span style={{ fontSize: 14, color: "var(--tkd-text)" }}>{t.pt}</span>

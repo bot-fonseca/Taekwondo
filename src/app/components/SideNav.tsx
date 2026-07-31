@@ -1,17 +1,19 @@
-import { Home, Hand, Grid3x3, BookOpen, Dumbbell, Lock, LockOpen } from "lucide-react";
+import { Home, Hand, Grid3x3, BookOpen, Dumbbell, Lock, LockOpen, Sun, Moon } from "lucide-react";
 import type { TabId } from "./BottomNav";
 import { useAdmin } from "../context/AdminContext";
+import { useTheme } from "../context/ThemeContext";
 
 const TABS: { id: TabId; label: string; Icon: typeof Home }[] = [
   { id: "home",     label: "Início",   Icon: Home },
+  { id: "pratica",  label: "Prática",  Icon: Dumbbell },
   { id: "tecnicas", label: "Técnicas", Icon: Hand },
   { id: "poomsae",  label: "Poomsae",  Icon: Grid3x3 },
-  { id: "pratica",  label: "Prática",  Icon: Dumbbell },
   { id: "termos",   label: "Termos",   Icon: BookOpen },
 ];
 
 export function SideNav({ active, onChange }: { active: TabId; onChange: (t: TabId) => void }) {
   const { isAdmin, unlock, lock, changePin } = useAdmin();
+  const { theme, toggle: toggleTheme } = useTheme();
 
   return (
     <nav
@@ -55,6 +57,18 @@ export function SideNav({ active, onChange }: { active: TabId; onChange: (t: Tab
 
       {/* Admin toggle — bottom of sidebar */}
       <div className="mt-auto flex flex-col gap-1 pt-4 border-t" style={{ borderColor: "var(--tkd-border)" }}>
+        {/* Theme toggle */}
+        <button
+          type="button"
+          onClick={toggleTheme}
+          className="flex items-center gap-2 px-3 py-2 rounded-xl transition-colors w-full"
+          style={{ color: "var(--tkd-muted)" }}
+        >
+          {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+          <span className="font-display" style={{ fontSize: 11, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+            {theme === "dark" ? "Modo claro" : "Modo escuro"}
+          </span>
+        </button>
         <button
           type="button"
           onClick={isAdmin ? lock : unlock}

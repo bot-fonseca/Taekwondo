@@ -1,8 +1,35 @@
+import { useState } from "react";
 import { POOMSAE } from "../../data/taekwondo";
+import { useAdmin } from "../../context/AdminContext";
 import { Trigram } from "../Trigram";
 import { DetailHeader } from "./DetailHeader";
 
-export function PoomsaeDetail({ id, onBack }: { id: string; onBack: () => void }) {
+const IMG_EXTS = ["jpg", "jpeg", "png", "webp"];
+
+function PoomsaeImage({ id, image }: { id: string; image?: string }) {
+  const [extIdx, setExtIdx] = useState(0);
+  const filename = image ?? `${id}.${IMG_EXTS[extIdx]}`;
+  const src = `/images/poomsae/${image ? image : `${id}.${IMG_EXTS[extIdx]}`}`;
+
+  if (!image && extIdx >= IMG_EXTS.length) return null;
+
+  return (
+    <img
+      src={src}
+      alt=""
+      className="w-full rounded-2xl mt-4"
+      style={{ maxHeight: 320, objectFit: "contain", background: "var(--tkd-surface)" }}
+      onError={() => { if (!image) setExtIdx(i => i + 1); }}
+    />
+  );
+}
+
+export function PoomsaeDetail({ id, onBack, onEdit }: {
+  id: string;
+  onBack: () => void;
+  onEdit?: () => void;
+}) {
+  const { isAdmin } = useAdmin();
   const p = POOMSAE.find((x) => x.id === id);
   if (!p) return null;
 
@@ -10,6 +37,16 @@ export function PoomsaeDetail({ id, onBack }: { id: string; onBack: () => void }
     <div>
       <DetailHeader onBack={onBack} label="Poomsae" />
       <div className="px-4">
+        {isAdmin && onEdit && (
+          <button
+            type="button"
+            onClick={onEdit}
+            className="w-full rounded-xl py-2.5 mb-4 font-display transition-opacity active:opacity-70"
+            style={{ fontSize: 12, letterSpacing: "0.07em", textTransform: "uppercase", background: "var(--tkd-surface)", border: "1px solid var(--tkd-border)", color: "var(--tkd-muted)" }}
+          >
+            ✎ Editar poomsae
+          </button>
+        )}
         <div
           className="rounded-2xl px-5 py-6 flex items-center gap-4"
           style={{ background: "var(--tkd-surface)", border: "1px solid var(--tkd-border)" }}
@@ -25,6 +62,8 @@ export function PoomsaeDetail({ id, onBack }: { id: string; onBack: () => void }
             <span style={{ fontSize: 11, color: "var(--tkd-muted)", textTransform: "uppercase", letterSpacing: "0.06em" }}>movimentos</span>
           </div>
         </div>
+
+        <PoomsaeImage id={p.id} image={p.image} />
 
         <p style={{ fontSize: 15, lineHeight: 1.55, color: "var(--tkd-text)" }} className="mt-4 italic">{p.meaning}</p>
 

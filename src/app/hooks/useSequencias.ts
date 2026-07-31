@@ -7,11 +7,12 @@ export function useSequencias() {
   return {
     sequencias: SEQUENCIAS,
 
-    async criar(nome: string, descricao: string, passos: SequenciaStep[]): Promise<Sequencia> {
+    async criar(nome: string, descricao: string, passos: SequenciaStep[], belt?: string): Promise<Sequencia> {
       const nova: Sequencia = {
         id: crypto.randomUUID(),
         nome,
         descricao: descricao || undefined,
+        belt: belt || undefined,
         passos,
         criadaEm: Date.now(),
       };
@@ -25,9 +26,9 @@ export function useSequencias() {
       return nova;
     },
 
-    async editar(id: string, nome: string, descricao: string, passos: SequenciaStep[]): Promise<void> {
+    async editar(id: string, nome: string, descricao: string, passos: SequenciaStep[], belt?: string): Promise<void> {
       const updated = SEQUENCIAS.map(s =>
-        s.id === id ? { ...s, nome, descricao: descricao || undefined, passos } : s
+        s.id === id ? { ...s, nome, descricao: descricao || undefined, belt: belt || undefined, passos } : s
       );
       try {
         await saveResource("sequences", updated);

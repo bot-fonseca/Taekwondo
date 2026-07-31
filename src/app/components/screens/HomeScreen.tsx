@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Search, Hand, Grid3x3, BookOpen, ChevronRight } from "lucide-react";
+import { Search, Hand, Grid3x3, BookOpen, ChevronRight, Dumbbell } from "lucide-react";
 import { TECHNIQUES, POOMSAE, TERMINOLOGY, CATEGORIES } from "../../data/taekwondo";
 import { HangulPair } from "../atoms";
 import { Trigram } from "../Trigram";
@@ -50,9 +50,10 @@ export function HomeScreen({ onOpenTechnique, onOpenPoomsae, onGoTab }: Props) {
   }, [query]);
 
   const quick = [
-    { id: "tecnicas" as TabId, label: "Técnicas soltas", korean: "기술", Icon: Hand, decor: "☲" },
-    { id: "poomsae" as TabId, label: "Poomsae", korean: "품새", Icon: Grid3x3, decor: "☰" },
-    { id: "termos" as TabId, label: "Terminologia geral", korean: "용어", Icon: BookOpen, decor: "☷" },
+    { id: "pratica"  as TabId, label: "Prática",            korean: "연습", Icon: Dumbbell,  decor: "(하태)" },
+    { id: "tecnicas" as TabId, label: "Técnicas soltas",   korean: "기술", Icon: Hand,      decor: "☲" },
+    { id: "poomsae"  as TabId, label: "Poomsae",           korean: "품새", Icon: Grid3x3,   decor: "☰" },
+    { id: "termos"   as TabId, label: "Terminologia geral", korean: "용어", Icon: BookOpen,  decor: "☷" },
   ];
 
   return (

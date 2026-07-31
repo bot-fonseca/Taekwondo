@@ -11,7 +11,7 @@
  * git commit + push: chamado explicitamente pelo componente AdminCommitButton.
  */
 
-export type DataResource = "techniques" | "hanbeon" | "hoshin" | "sequences";
+export type DataResource = "techniques" | "hanbeon" | "hoshin" | "sequences" | "poomsae";
 
 async function postApi(endpoint: string, body: object): Promise<void> {
   const res = await fetch(`/api/admin/${endpoint}`, {

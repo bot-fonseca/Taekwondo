@@ -18,31 +18,38 @@ import { SequenciasScreen } from "./components/screens/SequenciasScreen";
 import { SequenciaDetail } from "./components/screens/SequenciaDetail";
 import { SequenciaEditor } from "./components/screens/SequenciaEditor";
 import { TechniqueEditor } from "./components/screens/TechniqueEditor";
-import { Lock, LockOpen } from "lucide-react";
+import { PoomsaeEditor } from "./components/screens/PoomsaeEditor";
+import { BeltScreen } from "./components/screens/BeltScreen";
+import { BeltDetail } from "./components/screens/BeltDetail";
+import { Lock, LockOpen, Sun, Moon } from "lucide-react";
+import { useTheme } from "./context/ThemeContext";
 
 type Detail =
   | { type: "technique"; id: string }
   | { type: "poomsae"; id: string }
   | { type: "technique-editor"; editId?: string }
+  | { type: "poomsae-editor"; editId?: string }
   | null;
 
 type PraticaView =
   | { screen: "hub" }
+  | { screen: "belt-detail"; beltId: string }
   | { screen: "hanbeon" }
   | { screen: "hanbeon-detail"; id: string }
-  | { screen: "hanbeon-editor"; editId?: string }
+  | { screen: "hanbeon-editor"; editId?: string; prefillBelt?: string; returnBelt?: string }
   | { screen: "hoshin" }
   | { screen: "hoshin-detail"; id: string }
-  | { screen: "hoshin-editor"; editId?: string }
+  | { screen: "hoshin-editor"; editId?: string; prefillBelt?: string; returnBelt?: string }
   | { screen: "sequencias" }
   | { screen: "sequencia-detail"; id: string }
-  | { screen: "sequencia-editor"; editId?: string };
+  | { screen: "sequencia-editor"; editId?: string; prefillBelt?: string; returnBelt?: string };
 
 export default function App() {
   const [tab, setTab] = useState<TabId>("home");
   const [detail, setDetail] = useState<Detail>(null);
   const [pratica, setPratica] = useState<PraticaView>({ screen: "hub" });
   const { isAdmin, unlock, lock } = useAdmin();
+  const { theme, toggle: toggleTheme } = useTheme();
 
   const openTechnique = (id: string) => setDetail({ type: "technique", id });
   const openPoomsae = (id: string) => setDetail({ type: "poomsae", id });
@@ -58,33 +65,26 @@ export default function App() {
     switch (pratica.screen) {
       case "hub":
         return (
-          <div>
-            <div className="px-4 pt-6 pb-4">
-              <p className="font-display mb-1" style={{ fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--tkd-red)" }}>
-                연습
-              </p>
-              <h1 style={{ fontSize: 26, fontWeight: 700, color: "var(--tkd-text)" }}>Prática</h1>
-            </div>
-            <div className="px-4 flex flex-col gap-3">
-              {[
-                { label: "한번겨루기", title: "Hanbeon Kyorugi", sub: "Combate de um passo", screen: "hanbeon" as const },
-                { label: "호신술",    title: "Ho Shin Sul",       sub: "Auto-defesa",       screen: "hoshin" as const },
-                { label: "순서",      title: "Sequências",         sub: "Combinações personalizadas", screen: "sequencias" as const },
-              ].map(item => (
-                <button
-                  key={item.screen}
-                  type="button"
-                  onClick={() => setPratica({ screen: item.screen })}
-                  className="w-full text-left rounded-2xl px-5 py-5 transition-opacity active:opacity-70"
-                  style={{ background: "var(--tkd-surface)", border: "1px solid var(--tkd-border)" }}
-                >
-                  <p className="font-kr" style={{ fontSize: 22, color: "var(--tkd-muted)", marginBottom: 4 }}>{item.label}</p>
-                  <p style={{ fontSize: 17, fontWeight: 700, color: "var(--tkd-text)" }}>{item.title}</p>
-                  <p style={{ fontSize: 13, color: "var(--tkd-muted)", marginTop: 2 }}>{item.sub}</p>
-                </button>
-              ))}
-            </div>
-          </div>
+          <BeltScreen
+            onOpenBelt={beltId => setPratica({ screen: "belt-detail", beltId })}
+            onAllHanbeon={() => setPratica({ screen: "hanbeon" })}
+            onAllHoShin={() => setPratica({ screen: "hoshin" })}
+            onAllSeq={() => setPratica({ screen: "sequencias" })}
+          />
+        );
+      case "belt-detail":
+        return (
+          <BeltDetail
+            beltId={pratica.beltId}
+            onBack={() => setPratica({ screen: "hub" })}
+            onOpenPoomsae={openPoomsae}
+            onOpenHanbeon={id => setPratica({ screen: "hanbeon-detail", id })}
+            onOpenHoShin={id => setPratica({ screen: "hoshin-detail", id })}
+            onOpenSeq={id => setPratica({ screen: "sequencia-detail", id })}
+            onNovoHanbeon={() => setPratica({ screen: "hanbeon-editor", prefillBelt: pratica.beltId, returnBelt: pratica.beltId })}
+            onNovoHoShin={() => setPratica({ screen: "hoshin-editor", prefillBelt: pratica.beltId, returnBelt: pratica.beltId })}
+            onNovaSeq={() => setPratica({ screen: "sequencia-editor", prefillBelt: pratica.beltId, returnBelt: pratica.beltId })}
+          />
         );
       case "hanbeon":
         return <HanbeonScreen onOpen={id => setPratica({ screen: "hanbeon-detail", id })} onNovo={() => setPratica({ screen: "hanbeon-editor" })} />;
@@ -101,8 +101,17 @@ export default function App() {
         return (
           <HanbeonEditor
             editId={pratica.editId}
-            onSaved={id => setPratica({ screen: "hanbeon-detail", id })}
-            onCancel={() => setPratica(pratica.editId ? { screen: "hanbeon-detail", id: pratica.editId } : { screen: "hanbeon" })}
+            prefillBelt={pratica.prefillBelt}
+            onSaved={id => setPratica(
+              pratica.returnBelt
+                ? { screen: "belt-detail", beltId: pratica.returnBelt }
+                : { screen: "hanbeon-detail", id }
+            )}
+            onCancel={() => setPratica(
+              pratica.returnBelt
+                ? { screen: "belt-detail", beltId: pratica.returnBelt }
+                : pratica.editId ? { screen: "hanbeon-detail", id: pratica.editId } : { screen: "hanbeon" }
+            )}
           />
         );
       case "hoshin":
@@ -120,8 +129,17 @@ export default function App() {
         return (
           <HoShinEditor
             editId={pratica.editId}
-            onSaved={id => setPratica({ screen: "hoshin-detail", id })}
-            onCancel={() => setPratica(pratica.editId ? { screen: "hoshin-detail", id: pratica.editId } : { screen: "hoshin" })}
+            prefillBelt={pratica.prefillBelt}
+            onSaved={id => setPratica(
+              pratica.returnBelt
+                ? { screen: "belt-detail", beltId: pratica.returnBelt }
+                : { screen: "hoshin-detail", id }
+            )}
+            onCancel={() => setPratica(
+              pratica.returnBelt
+                ? { screen: "belt-detail", beltId: pratica.returnBelt }
+                : pratica.editId ? { screen: "hoshin-detail", id: pratica.editId } : { screen: "hoshin" }
+            )}
           />
         );
       case "sequencias":
@@ -144,11 +162,18 @@ export default function App() {
         return (
           <SequenciaEditor
             editId={pratica.editId}
-            onSaved={id => setPratica({ screen: "sequencia-detail", id })}
+            prefillBelt={pratica.prefillBelt}
+            onSaved={id => setPratica(
+              pratica.returnBelt
+                ? { screen: "belt-detail", beltId: pratica.returnBelt }
+                : { screen: "sequencia-detail", id }
+            )}
             onCancel={() => setPratica(
-              pratica.editId
-                ? { screen: "sequencia-detail", id: pratica.editId }
-                : { screen: "sequencias" }
+              pratica.returnBelt
+                ? { screen: "belt-detail", beltId: pratica.returnBelt }
+                : pratica.editId
+                  ? { screen: "sequencia-detail", id: pratica.editId }
+                  : { screen: "sequencias" }
             )}
           />
         );
@@ -164,7 +189,22 @@ export default function App() {
         onEdit={() => setDetail({ type: "technique-editor", editId: detail.id })}
       />
     );
-    if (detail?.type === "poomsae") return <PoomsaeDetail id={detail.id} onBack={back} />;
+    if (detail?.type === "poomsae") return (
+      <PoomsaeDetail
+        id={detail.id}
+        onBack={back}
+        onEdit={() => setDetail({ type: "poomsae-editor", editId: detail.id })}
+      />
+    );
+    if (detail?.type === "poomsae-editor") return (
+      <PoomsaeEditor
+        editId={detail.editId}
+        onSaved={id => setDetail({ type: "poomsae", id })}
+        onCancel={() => setDetail(
+          detail.editId ? { type: "poomsae", id: detail.editId } : null
+        )}
+      />
+    );
     if (detail?.type === "technique-editor") return (
       <TechniqueEditor
         editId={detail.editId}
@@ -181,7 +221,7 @@ export default function App() {
       case "tecnicas":
         return <TechniquesScreen onOpen={openTechnique} onNova={() => setDetail({ type: "technique-editor" })} />;
       case "poomsae":
-        return <PoomsaeScreen onOpen={openPoomsae} />;
+        return <PoomsaeScreen onOpen={openPoomsae} onNova={() => setDetail({ type: "poomsae-editor" })} />;
       case "pratica":
         return renderPratica();
       case "termos":
@@ -208,6 +248,24 @@ export default function App() {
           <div className="md:hidden">
             <BottomNav active={tab} onChange={goTab} />
           </div>
+
+          {/* Theme toggle — mobile only, junto ao botão de admin */}
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="md:hidden fixed z-50 flex items-center justify-center rounded-full transition-opacity active:opacity-70"
+            style={{
+              bottom: "calc(5rem + max(0.5rem, env(safe-area-inset-bottom)))",
+              right: "3.5rem",
+              width: 36, height: 36,
+              background: "var(--tkd-surface)",
+              border: "1px solid var(--tkd-border)",
+              color: "var(--tkd-muted)",
+            }}
+            title={theme === "dark" ? "Modo claro" : "Modo escuro"}
+          >
+            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+          </button>
 
           {/* Admin toggle — mobile only, canto inferior direito acima da bottom nav */}
           <button

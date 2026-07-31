@@ -4,9 +4,9 @@ export type TabId = "home" | "tecnicas" | "poomsae" | "termos" | "pratica";
 
 const TABS: { id: TabId; label: string; Icon: typeof Home }[] = [
   { id: "home",     label: "Início",   Icon: Home },
+  { id: "pratica",  label: "Prática",  Icon: Dumbbell },
   { id: "tecnicas", label: "Técnicas", Icon: Hand },
   { id: "poomsae",  label: "Poomsae",  Icon: Grid3x3 },
-  { id: "pratica",  label: "Prática",  Icon: Dumbbell },
   { id: "termos",   label: "Termos",   Icon: BookOpen },
 ];
 
@@ -14,9 +14,9 @@ export function BottomNav({ active, onChange }: { active: TabId; onChange: (t: T
   return (
     <nav
       aria-label="Navegação principal"
-      className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[520px] z-40"
+      className="fixed bottom-0 left-0 w-full z-40"
       style={{
-        background: "rgba(28,33,40,0.92)",
+      background: "var(--tkd-nav-bg)",
         backdropFilter: "blur(12px)",
         borderTop: "1px solid var(--tkd-border)",
       }}

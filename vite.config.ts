@@ -22,7 +22,7 @@ function figmaAssetResolver() {
 // git commit + push sem sair da app.
 function adminApiPlugin() {
   const DATA_DIR = path.resolve(__dirname, 'src/app/data')
-  const ALLOWED  = new Set(['techniques', 'hanbeon', 'hoshin', 'sequences'])
+  const ALLOWED  = new Set(['techniques', 'hanbeon', 'hoshin', 'sequences', 'poomsae'])
 
   return {
     name: 'admin-api',
