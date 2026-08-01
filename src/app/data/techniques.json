@@ -1,8 +1,8 @@
 [
   {
     "id": "sq-charyeot",
+    "roman": "Moá-Seogi",
     "hangul": "차렷 서기",
-    "roman": "Charyeot Seogi",
     "pt": "Posição de sentido",
     "category": "seogi",
     "note": "Pés juntos, corpo ereto, posição de atenção."
@@ -57,19 +57,19 @@
   },
   {
     "id": "sq-koa",
-    "hangul": "꼬아 서기",
     "roman": "Koa Seogi",
+    "hangul": "꼬아 서기",
     "pt": "Posição cruzada",
     "category": "seogi",
-    "note": "Um pé cruza atrás do outro."
+    "note": "Um pé cruza atrás do outro.\nEsta posiçao pode ter dois prefixos, Ap (perna dianteira direita) e Di (perna dianteira esquerda)."
   },
   {
     "id": "at-momtong-jireugi",
-    "hangul": "몸통 지르기",
-    "roman": "Momtong Jireugi",
+    "roman": "Momtong  Bandae Jireugi",
+    "hangul": "몸통 반대 지르기",
     "pt": "Soco médio (tronco)",
     "category": "jireugi",
-    "note": "Soco directo à zona do plexo."
+    "note": "Soco directo à zona do plexo, executado do mesmo lado com que se avançou a perna."
   },
   {
     "id": "at-eolgul-jireugi",
@@ -105,11 +105,11 @@
   },
   {
     "id": "at-deung-jumeok",
+    "roman": "Dung  Chumok olgul  Ap Chigi",
     "hangul": "등주먹 앞치기",
-    "roman": "Deung Jumeok Apchigi",
     "pt": "Golpe com as costas do punho",
     "category": "jireugi",
-    "note": "Golpe frontal com o dorso do punho."
+    "note": "Golpe frontal com o dorso do punho dirigido à cana do nariz"
   },
   {
     "id": "at-palkup-chigi",
@@ -153,32 +153,32 @@
   },
   {
     "id": "bl-an-makgi",
-    "hangul": "안 막기",
-    "roman": "An Makgi",
+    "roman": "Sonnal An Makgi",
+    "hangul": "손날 안막기",
     "pt": "Bloqueio de fora para dentro",
     "category": "makgi",
     "note": "Antebraço varre para dentro."
   },
   {
     "id": "bl-bakat-makgi",
-    "hangul": "바깥 막기",
-    "roman": "Bakkat Makgi",
+    "roman": "Momtong Bakkat Makgi",
+    "hangul": "바깥막기",
     "pt": "Bloqueio de dentro para fora",
     "category": "makgi",
     "note": "Antebraço varre para fora."
   },
   {
     "id": "bl-sonnal-makgi",
-    "hangul": "손날 막기",
-    "roman": "Sonnal Makgi",
+    "roman": "Hansonnal Mom Thong Bakkat Makgi",
+    "hangul": "한손날 바깥막기",
     "pt": "Bloqueio com cutelo da mão",
     "category": "makgi",
     "note": "Defesa com o bordo da mão."
   },
   {
     "id": "bl-hecho-makgi",
-    "hangul": "헤쳐 막기",
-    "roman": "Hecho Makgi",
+    "roman": "Anpalmok Hecho Makgi",
+    "hangul": "안팔목 헤쳐막기",
     "pt": "Bloqueio de abertura",
     "category": "makgi",
     "note": "Dois antebraços abrem simultaneamente."
@@ -262,5 +262,53 @@
     "pt": "pontapé rotativo de dentro para fora",
     "category": "chagi",
     "note": "pontapé com a perna sempre esticada, com um movimento rotativo do interior para o exterior"
+  },
+  {
+    "id": "custom-1785582864270",
+    "roman": "Kibon Junbi seogi",
+    "hangul": "기본 준비 서기",
+    "pt": "Posição de Preparação",
+    "category": "seogi",
+    "note": "Os pés em distância igual à largura dos ombros e colocar as mãos em frente ao nó do cinto (punhos fechados)."
+  },
+  {
+    "id": "custom-1785586004230",
+    "roman": "Olgul Bakkat Makgi",
+    "hangul": "올려 바깥막기",
+    "pt": "Bloqueio alto de dentro para fora",
+    "category": "makgi",
+    "note": "Antebraço roda de dentro para fora de forma a proteger a cabeça, fazendo um ângulo de 90º entre o braço e o antebraço."
+  },
+  {
+    "id": "custom-1785586357670",
+    "roman": "Anpalmok Bakkat Makgi",
+    "hangul": "안팔목 바깥막기",
+    "pt": "Bloqueio médio com o antebraço e interior do pulso virado para o exterior",
+    "category": "makgi",
+    "note": "Este bloqueio utiliza a parte interna do pulso do antebraço, que serve para desviar um golpe para longe do corpo. O punho de bloqueio fica paralelo ao ombro e a palma da mão deve estar virada para o corpo."
+  },
+  {
+    "id": "custom-1785586603300",
+    "roman": "Batangson An Makgi",
+    "hangul": "바탕손 안막기",
+    "pt": "Bloqueio com a palma da mão voltada para baixo",
+    "category": "makgi",
+    "note": "Bloquio que utiliza «parte inferior da palma» para bloquear a zona do tronco."
+  },
+  {
+    "id": "custom-1785592805357",
+    "roman": "Batangson Nulleo Makgi",
+    "hangul": "바탕손 눌러막기",
+    "pt": "Bloqueio com palma da mao",
+    "category": "makgi",
+    "note": "Um bloqueio padrão utilizado para desviar pontapés e socos. Abra a mão e utilize a \"parte inferior da palma\" para bloquear a zona do tronco. A mão aberta é levantada até à altura do ombro e empurrada diretamente para baixo, de forma a encontrar a mão ou o membro do atacante."
+  },
+  {
+    "id": "custom-1785593359344",
+    "roman": "Sonnal Montong Maki",
+    "hangul": "손날 몸통 막기",
+    "pt": "Bloqueio médio com as duas mãos abertas",
+    "category": "makgi",
+    "note": "Bloqueio em que a mão da frente mantém-se na posição de faca para bloquear ataques ao tronco, enquanto a mão de trás (também na posição de faca) pode ser utilizada para um contra-ataque. A mão que bloqueia começa ao nível do ombro, com a palma virada para cima, enquanto a outra mão é esticada para longe da cintura, com a palma virada para baixo, ao nível do ombro."
   }
 ]

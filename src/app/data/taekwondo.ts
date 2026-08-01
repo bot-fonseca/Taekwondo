@@ -133,7 +133,7 @@ export const TERMINOLOGY: TermGroup[] = [
       { hangul: "파란 띠", roman: "Paran Ti", pt: "Cinto azul" },
       { hangul: "빨간 띠", roman: "Ppalgan Ti", pt: "Cinto vermelho" },
       { hangul: "검은 띠", roman: "Geomeun Ti", pt: "Cinto preto" },
-      { hangul: "급", roman: "Geup", pt: "Grau (antes do preto)" },
+      { hangul: "급", roman: "Kup", pt: "Grau (antes do preto)" },
       { hangul: "단", roman: "Dan", pt: "Grau de cinto preto" },
     ],
   },

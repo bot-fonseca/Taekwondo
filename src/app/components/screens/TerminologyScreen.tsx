@@ -41,8 +41,8 @@ export function TerminologyScreen() {
                       <span style={{ fontSize: 14, color: "var(--tkd-text)" }}>{belt.label}</span>
                     </li>
                   ))}
-                  {/* Geup e Dan */}
-                  {g.entries.filter(e => e.roman === "Geup" || e.roman === "Dan").map((e) => (
+                  {/* Kup e Dan */}
+                  {g.entries.filter(e => e.roman === "Kup" || e.roman === "Dan").map((e) => (
                     <li
                       key={e.roman}
                       className="flex items-center gap-3 px-4 py-3"
