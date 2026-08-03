@@ -11,12 +11,19 @@ const DECOR: Record<CategoryId, string> = {
   chagi: "☳",
 };
 
-export function TechniquesScreen({ onOpen, onNova }: {
+export function TechniquesScreen({ onOpen, onNova, initialFilter = "seogi", onFilterChange }: {
   onOpen: (id: string) => void;
   onNova: () => void;
+  initialFilter?: CategoryId;
+  onFilterChange?: (f: CategoryId) => void;
 }) {
-  const [filter, setFilter] = useState<CategoryId>("seogi");
+  const [filter, setFilter] = useState<CategoryId>(initialFilter);
   const { isAdmin } = useAdmin();
+
+  const handleFilter = (f: CategoryId) => {
+    setFilter(f);
+    onFilterChange?.(f);
+  };
 
   const list = useMemo(() => {
     return TECHNIQUES.filter(t => t.category === filter);
@@ -39,7 +46,7 @@ export function TechniquesScreen({ onOpen, onNova }: {
       {/* Filtro por categoria */}
       <div className="flex flex-wrap gap-2 mb-4">
         {CATEGORIES.map((c) => (
-          <FilterChip key={c.id} active={filter === c.id} onClick={() => setFilter(c.id)} label={c.label} korean={c.roman} />
+          <FilterChip key={c.id} active={filter === c.id} onClick={() => handleFilter(c.id)} label={c.label} korean={c.roman} />
         ))}
       </div>
 

@@ -21,6 +21,7 @@ export interface Technique {
   pt: string;
   category: CategoryId;
   note?: string;
+  image?: string;  // caminho relativo a /images/ (ex: "chagui/ap.jpg")
 }
 
 export const CATEGORIES: Category[] = [

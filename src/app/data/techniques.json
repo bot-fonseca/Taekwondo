@@ -197,6 +197,7 @@
     "roman": "Ap Chagi",
     "pt": "Pontapé frontal",
     "category": "chagi",
+    "image": "chagui/ap.jpg",
     "note": "Pontapé directo com a planta do pé."
   },
   {
@@ -205,6 +206,7 @@
     "roman": "Dollyo Chagi",
     "pt": "Pontapé circular",
     "category": "chagi",
+    "image": "chagui/dollyeo.jpg",
     "note": "Pontapé em arco com o peito do pé."
   },
   {
@@ -213,6 +215,7 @@
     "roman": "Yeop Chagi",
     "pt": "Pontapé lateral",
     "category": "chagi",
+    "image": "chagui/yeop.jpg",
     "note": "Pontapé de lado com o bordo do pé."
   },
   {
@@ -221,6 +224,7 @@
     "roman": "Dwit Chagi",
     "pt": "Pontapé para trás",
     "category": "chagi",
+    "image": "chagui/dwi.jpg",
     "note": "Pontapé recuado com o calcanhar."
   },
   {
@@ -229,6 +233,7 @@
     "roman": "Naeryeo Chagi",
     "pt": "Pontapé descendente (machado)",
     "category": "chagi",
+    "image": "chagui/naeryeo.jpg",
     "note": "Perna sobe e desce sobre o alvo."
   },
   {
@@ -237,6 +242,7 @@
     "roman": "Bandal Chagi",
     "pt": "Pontapé meia-lua",
     "category": "chagi",
+    "image": "chagui/bandal.png",
     "note": "Trajetória curta em meia-lua."
   },
   {
@@ -245,6 +251,7 @@
     "roman": "Huryeo Chagi",
     "pt": "Pontapé de gancho",
     "category": "chagi",
+    "image": "chagui/fury.jpg",
     "note": "Perna estica e recolhe em gancho."
   },
   {

@@ -22,8 +22,21 @@ function TechniqueImage({ id, suffix = "", alt, className = "" }: { id: string; 
   );
 }
 
-function TechniqueImages({ id, alt }: { id: string; alt: string }) {
+function TechniqueImages({ id, alt, image }: { id: string; alt: string; image?: string }) {
   const [hasSecond, setHasSecond] = useState(true);
+
+  if (image) {
+    return (
+      <div className="mt-4">
+        <img
+          src={`/images/${image}`}
+          alt={alt}
+          className="w-full rounded-2xl"
+          style={{ maxHeight: 320, objectFit: "contain", background: "var(--tkd-surface)" }}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className={`mt-4 grid gap-3 ${hasSecond ? "grid-cols-2" : "grid-cols-1"}`}>
@@ -103,7 +116,7 @@ export function TechniqueDetail({ id, onBack, onEdit }: {
           </div>
         )}
 
-        <TechniqueImages id={t.id} alt={t.roman} />
+        <TechniqueImages id={t.id} alt={t.roman} image={t.image} />
       </div>
     </div>
   );

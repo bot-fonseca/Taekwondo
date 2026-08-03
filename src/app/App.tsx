@@ -48,6 +48,7 @@ export default function App() {
   const [tab, setTab] = useState<TabId>("home");
   const [detail, setDetail] = useState<Detail>(null);
   const [pratica, setPratica] = useState<PraticaView>({ screen: "hub" });
+  const [techFilter, setTechFilter] = useState<import("./data/taekwondo").CategoryId>("seogi");
   const { isAdmin, unlock, lock } = useAdmin();
   const { theme, toggle: toggleTheme } = useTheme();
 
@@ -219,7 +220,7 @@ export default function App() {
       case "home":
         return <HomeScreen onOpenTechnique={openTechnique} onOpenPoomsae={openPoomsae} onGoTab={goTab} />;
       case "tecnicas":
-        return <TechniquesScreen onOpen={openTechnique} onNova={() => setDetail({ type: "technique-editor" })} />;
+        return <TechniquesScreen onOpen={openTechnique} onNova={() => setDetail({ type: "technique-editor" })} initialFilter={techFilter} onFilterChange={setTechFilter} />;
       case "poomsae":
         return <PoomsaeScreen onOpen={openPoomsae} onNova={() => setDetail({ type: "poomsae-editor" })} />;
       case "pratica":
