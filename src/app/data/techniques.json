@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "id": "sq-charyeot",
     "roman": "Moá-Seogi",
@@ -220,12 +220,12 @@
   },
   {
     "id": "ck-dwit-chagi",
+    "roman": "Moldol Dwit Chagi",
     "hangul": "뒤 차기",
-    "roman": "Dwit Chagi",
     "pt": "Pontapé para trás",
     "category": "chagi",
     "image": "chagui/dwi.jpg",
-    "note": "Pontapé recuado com o calcanhar."
+    "note": "Pontapé recuado com o calcanhar.\nTodos os pontapés com o prefixo \"Moldol\", são pontapés rotativos."
   },
   {
     "id": "ck-naeryeo-chagi",
@@ -253,14 +253,6 @@
     "category": "chagi",
     "image": "chagui/fury.jpg",
     "note": "Perna estica e recolhe em gancho."
-  },
-  {
-    "id": "ck-dwit-huryeo",
-    "roman": "Dwit Huryeo Chagi",
-    "hangul": "뒤 후려 차기",
-    "pt": "Pontapé de gancho rodado",
-    "category": "chagi",
-    "note": "Rotação completa com gancho ao alto."
   },
   {
     "id": "custom-1785428060754",
@@ -302,14 +294,18 @@
     "roman": "Batangson An Makgi",
     "hangul": "바탕손 안막기",
     "pt": "Bloqueio com a palma da mão voltada para baixo",
-    "category": "makgi",    "image": "techniques/batsong-an-magki.jpg",    "note": "Bloquio que utiliza «parte inferior da palma» para bloquear a zona do tronco."
+    "category": "makgi",
+    "image": "techniques/batsong-an-magki.jpg",
+    "note": "Bloquio que utiliza «parte inferior da palma» para bloquear a zona do tronco."
   },
   {
     "id": "custom-1785592805357",
     "roman": "Batangson Nulleo Makgi",
     "hangul": "바탕손 눌러막기",
     "pt": "Bloqueio com palma da mao",
-    "category": "makgi",    "image": "techniques/nulleo-makgi.jpg",    "note": "Um bloqueio padrão utilizado para desviar pontapés e socos. Abra a mão e utilize a \"parte inferior da palma\" para bloquear a zona do tronco. A mão aberta é levantada até à altura do ombro e empurrada diretamente para baixo, de forma a encontrar a mão ou o membro do atacante."
+    "category": "makgi",
+    "image": "techniques/nulleo-makgi.jpg",
+    "note": "Um bloqueio padrão utilizado para desviar pontapés e socos. Abra a mão e utilize a \"parte inferior da palma\" para bloquear a zona do tronco. A mão aberta é levantada até à altura do ombro e empurrada diretamente para baixo, de forma a encontrar a mão ou o membro do atacante."
   },
   {
     "id": "custom-1785593359344",
@@ -330,12 +326,12 @@
   },
   {
     "id": "ck-twieo-yeop-chagi",
-    "hangul": "뛰어 옆 차기",
     "roman": "Twieo Yeop Chagi",
+    "hangul": "뛰어 옆 차기",
     "pt": "Pontapé lateral com salto",
     "category": "chagi",
     "image": "chagui/twieo-yeop.jpg",
-    "note": "Pontapé lateral executado no ar."
+    "note": "Pontapé lateral executado no ar.\nTodos os pontapés que teham o prefixo \"Twieo\", são pontapés que sao realizados no ar."
   },
   {
     "id": "ck-mireo-chagi",
@@ -348,12 +344,12 @@
   },
   {
     "id": "ck-mondol-bandal-chagi",
-    "hangul": "몬돌 반달 차기",
     "roman": "Mondol Bandal Chagi",
+    "hangul": "몬돌 반달 차기",
     "pt": "Pontapé meia-lua com rotação",
     "category": "chagi",
     "image": "chagui/mondol-bandal.jpg",
-    "note": "Pontapé meia-lua executado com rotação completa do corpo."
+    "note": "Pontapé meia-lua executado com rotação completa do corpo.\nTodos os pontapés com o prefixo \"Mondol\", são pontapés rotativos."
   },
   {
     "id": "ck-moldol-huryeo-chagi",
@@ -363,5 +359,113 @@
     "category": "chagi",
     "image": "chagui/moldol-fury.jpg",
     "note": "Pontapé de gancho executado com rotação de 360°."
+  },
+  {
+    "id": "bl-otgoreo-makgi",
+    "hangul": "엇걸어막기",
+    "roman": "Otgoreo Makgi",
+    "pt": "Bloqueio cruzado",
+    "category": "makgi",
+    "image": "techniques/otgoreo-makgi.jpg",
+    "note": "Dois antebraços cruzam-se para bloquear um ataque descendente."
+  },
+  {
+    "id": "bl-arae-hecho-makgi",
+    "hangul": "아래 헤쳐막기",
+    "roman": "Arae Hecho Makgi",
+    "pt": "Bloqueio de abertura baixo",
+    "category": "makgi",
+    "image": "techniques/arae-hecho-makgi.jpg",
+    "note": "Ambos os antebraços abrem simultaneamente para baixo."
+  },
+  {
+    "id": "bl-anpalmok-hecho-makgi",
+    "hangul": "안팔목 헤쳐막기",
+    "roman": "Anpalmok Hecho Makgi",
+    "pt": "Bloqueio duplo com pulso interior",
+    "category": "makgi",
+    "image": "techniques/anpalmok-hecho-makgi.jpg",
+    "note": "Bloqueio de abertura usando o lado interior do pulso em ambos os braços."
+  },
+  {
+    "id": "bl-arae-otgoreo-makgi",
+    "hangul": "아래 엇걸어막기",
+    "roman": "Arae Otgoreo Makgi",
+    "pt": "Bloqueio cruzado baixo",
+    "category": "makgi",
+    "image": "techniques/arae-otgoreo-makgi.jpg",
+    "note": "Punhos cruzam-se e terminam no centro para bloquear ataques baixos."
+  },
+  {
+    "id": "bl-yeop-makgi",
+    "hangul": "옆막기",
+    "roman": "Yeop Makgi",
+    "pt": "Bloqueio lateral",
+    "category": "makgi",
+    "image": "techniques/yeop-makgi.jpg",
+    "note": "Bloqueia o ataque do adversário pelo lado, varrendo de dentro para fora."
+  },
+  {
+    "id": "bl-keumgang-makgi",
+    "hangul": "금강막기",
+    "roman": "Keumgang Makgi",
+    "pt": "Bloqueio diamante",
+    "category": "makgi",
+    "image": "techniques/keumgang-makgi.jpg",
+    "note": "Combina bloqueio baixo e bloqueio alto em simultâneo."
+  },
+  {
+    "id": "bl-sonnal-arae-makgi",
+    "hangul": "한손날 아래막기",
+    "roman": "Sonnal Arae Makgi",
+    "pt": "Bloqueio baixo com cutelo",
+    "category": "makgi",
+    "image": "techniques/sonnal-arae-makgi.jpg",
+    "note": "Bloqueio baixo executado com a mão em posição de cutelo."
+  },
+  {
+    "id": "bl-santeul-makgi",
+    "hangul": "산틀막기",
+    "roman": "Santeul Makgi",
+    "pt": "Bloqueio montanha",
+    "category": "makgi",
+    "image": "techniques/santeul-makgi.jpg",
+    "note": "Ambos os pulsos sobem acima da cabeça e bloqueiam para os lados em simultâneo."
+  },
+  {
+    "id": "bl-kodureo-naeryeo-makgi",
+    "hangul": "거들어 내려막기",
+    "roman": "Kodureo Naeryeo Makgi",
+    "pt": "Bloqueio descendente apoiado",
+    "category": "makgi",
+    "image": "techniques/kodureo-naeryeo-makgi.jpg",
+    "note": "Bloqueio baixo com o segundo braço a apoiar junto ao esterno."
+  },
+  {
+    "id": "bl-batangson-kodureo-makgi",
+    "hangul": "바탕손 거들어 몸통막기",
+    "roman": "Batangson Kodureo Makgi",
+    "pt": "Bloqueio médio assistido com palma",
+    "category": "makgi",
+    "image": "techniques/batangson-kodureo-makgi.jpg",
+    "note": "Bloqueio médio com palma apoiado pelo punho traseiro."
+  },
+  {
+    "id": "bl-sonnal-kodureo-bakkat-makgi",
+    "hangul": "손날 거들어 바깥막기",
+    "roman": "Sonnal Kodureo Bakkat Makgi",
+    "pt": "Bloqueio exterior apoiado com cutelo",
+    "category": "makgi",
+    "image": "techniques/sonnal-kodureo-bakkat-makgi.jpg",
+    "note": "Mão em cutelo bloqueia para fora enquanto a outra apoia."
+  },
+  {
+    "id": "bl-sonnal-kodureo-naeryeo-makgi",
+    "hangul": "손날 거들어 내려막기",
+    "roman": "Sonnal Kodureo Naeryeo Makgi",
+    "pt": "Bloqueio descendente apoiado com cutelo",
+    "category": "makgi",
+    "image": "techniques/sonnal-kodureo-naeryeo-makgi.jpg",
+    "note": "Bloqueio baixo com cutelo apoiado pelo braço de suporte."
   }
 ]

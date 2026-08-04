@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { ChevronRight } from "lucide-react";
 import { CATEGORIES, TECHNIQUES, type CategoryId } from "../../data/taekwondo";
 import { useAdmin } from "../../context/AdminContext";
+import { useTechniqueOrder } from "../../hooks/useTechniqueOrder";
 import { SectionTitle, HangulPair } from "../atoms";
 
 const DECOR: Record<CategoryId, string> = {
@@ -19,6 +20,7 @@ export function TechniquesScreen({ onOpen, onNova, initialFilter = "seogi", onFi
 }) {
   const [filter, setFilter] = useState<CategoryId>(initialFilter);
   const { isAdmin } = useAdmin();
+  const { getOrdered, move, version } = useTechniqueOrder();
 
   const handleFilter = (f: CategoryId) => {
     setFilter(f);
@@ -26,8 +28,10 @@ export function TechniquesScreen({ onOpen, onNova, initialFilter = "seogi", onFi
   };
 
   const list = useMemo(() => {
-    return TECHNIQUES.filter(t => t.category === filter);
-  }, [filter, TECHNIQUES.length]);
+    const filtered = TECHNIQUES.filter(t => t.category === filter);
+    return getOrdered(filter, filtered);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filter, TECHNIQUES.length, version]);
 
   return (
     <div className="px-4 pt-6">
@@ -51,21 +55,42 @@ export function TechniquesScreen({ onOpen, onNova, initialFilter = "seogi", onFi
       </div>
 
       <ul className="flex flex-col gap-2 pb-2">
-        {list.map((t) => (
+        {list.map((t, idx) => (
           <li key={t.id}>
-            <button
-              type="button"
-              onClick={() => onOpen(t.id)}
-              className="w-full text-left rounded-xl px-4 py-3 flex items-center gap-3"
+            <div
+              className="flex items-center rounded-xl overflow-hidden"
               style={{ background: "var(--tkd-surface)", border: "1px solid var(--tkd-border)" }}
             >
-              <span className="shrink-0 rounded-md" style={{ width: 6, height: 40, background: "var(--tkd-red)" }} />
-              <div className="flex-1 min-w-0">
-                <HangulPair hangul={t.hangul} roman={t.roman} size="sm" />
-                <span style={{ fontSize: 14, color: "var(--tkd-text)" }}>{t.pt}</span>
+              <button
+                type="button"
+                onClick={() => onOpen(t.id)}
+                className="flex-1 text-left px-4 py-3 flex items-center gap-3 transition-opacity active:opacity-70"
+              >
+                <span className="shrink-0 rounded-md" style={{ width: 6, height: 40, background: "var(--tkd-red)" }} />
+                <div className="flex-1 min-w-0">
+                  <HangulPair hangul={t.hangul} roman={t.roman} size="sm" />
+                  <span style={{ fontSize: 14, color: "var(--tkd-text)" }}>{t.pt}</span>
+                </div>
+                <ChevronRight size={18} color="var(--tkd-muted)" />
+              </button>
+              {/* Reorder controls visible to all users */}
+              <div className="flex flex-col shrink-0 pr-2 gap-0.5">
+                <button
+                  type="button"
+                  onClick={() => move(filter, list, idx, -1)}
+                  disabled={idx === 0}
+                  className="flex items-center justify-center w-7 h-6 rounded transition-opacity"
+                  style={{ background: "var(--tkd-bg)", color: idx === 0 ? "var(--tkd-border)" : "var(--tkd-muted)", fontSize: 13 }}
+                >↑</button>
+                <button
+                  type="button"
+                  onClick={() => move(filter, list, idx, 1)}
+                  disabled={idx === list.length - 1}
+                  className="flex items-center justify-center w-7 h-6 rounded transition-opacity"
+                  style={{ background: "var(--tkd-bg)", color: idx === list.length - 1 ? "var(--tkd-border)" : "var(--tkd-muted)", fontSize: 13 }}
+                >↓</button>
               </div>
-              <ChevronRight size={18} color="var(--tkd-muted)" />
-            </button>
+            </div>
           </li>
         ))}
       </ul>
