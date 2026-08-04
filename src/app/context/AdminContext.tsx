@@ -2,7 +2,7 @@ import { createContext, useContext, useState, type ReactNode } from "react";
 
 const PIN_KEY     = "tkd_admin_pin";
 const SESSION_KEY = "tkd_is_admin";
-const DEFAULT_PIN = "1234";
+const DEFAULT_PIN = "4321";
 
 interface AdminCtx {
   isAdmin: boolean;

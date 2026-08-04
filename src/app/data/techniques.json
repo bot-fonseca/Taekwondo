@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "id": "sq-charyeot",
     "roman": "Moá-Seogi",
@@ -264,10 +264,11 @@
   },
   {
     "id": "custom-1785428060754",
-    "roman": "backat chagui",
-    "hangul": "",
+    "roman": "Bakkat Chagui",
+    "hangul": "바깥차기",
     "pt": "pontapé rotativo de dentro para fora",
     "category": "chagi",
+    "image": "chagui/bakkat.jpg",
     "note": "pontapé com a perna sempre esticada, com um movimento rotativo do interior para o exterior"
   },
   {
@@ -284,6 +285,7 @@
     "hangul": "올려 바깥막기",
     "pt": "Bloqueio alto de dentro para fora",
     "category": "makgi",
+    "image": "techniques/olgul-bakkat-makgi.jpg",
     "note": "Antebraço roda de dentro para fora de forma a proteger a cabeça, fazendo um ângulo de 90º entre o braço e o antebraço."
   },
   {
@@ -292,6 +294,7 @@
     "hangul": "안팔목 바깥막기",
     "pt": "Bloqueio médio com o antebraço e interior do pulso virado para o exterior",
     "category": "makgi",
+    "image": "techniques/anpalmok-bakkat-makgi.jpg",
     "note": "Este bloqueio utiliza a parte interna do pulso do antebraço, que serve para desviar um golpe para longe do corpo. O punho de bloqueio fica paralelo ao ombro e a palma da mão deve estar virada para o corpo."
   },
   {
@@ -299,16 +302,14 @@
     "roman": "Batangson An Makgi",
     "hangul": "바탕손 안막기",
     "pt": "Bloqueio com a palma da mão voltada para baixo",
-    "category": "makgi",
-    "note": "Bloquio que utiliza «parte inferior da palma» para bloquear a zona do tronco."
+    "category": "makgi",    "image": "techniques/batsong-an-magki.jpg",    "note": "Bloquio que utiliza «parte inferior da palma» para bloquear a zona do tronco."
   },
   {
     "id": "custom-1785592805357",
     "roman": "Batangson Nulleo Makgi",
     "hangul": "바탕손 눌러막기",
     "pt": "Bloqueio com palma da mao",
-    "category": "makgi",
-    "note": "Um bloqueio padrão utilizado para desviar pontapés e socos. Abra a mão e utilize a \"parte inferior da palma\" para bloquear a zona do tronco. A mão aberta é levantada até à altura do ombro e empurrada diretamente para baixo, de forma a encontrar a mão ou o membro do atacante."
+    "category": "makgi",    "image": "techniques/nulleo-makgi.jpg",    "note": "Um bloqueio padrão utilizado para desviar pontapés e socos. Abra a mão e utilize a \"parte inferior da palma\" para bloquear a zona do tronco. A mão aberta é levantada até à altura do ombro e empurrada diretamente para baixo, de forma a encontrar a mão ou o membro do atacante."
   },
   {
     "id": "custom-1785593359344",
@@ -317,5 +318,50 @@
     "pt": "Bloqueio médio com as duas mãos abertas",
     "category": "makgi",
     "note": "Bloqueio em que a mão da frente mantém-se na posição de faca para bloquear ataques ao tronco, enquanto a mão de trás (também na posição de faca) pode ser utilizada para um contra-ataque. A mão que bloqueia começa ao nível do ombro, com a palma virada para cima, enquanto a outra mão é esticada para longe da cintura, com a palma virada para baixo, ao nível do ombro."
+  },
+  {
+    "id": "ck-an-chagi",
+    "hangul": "안 차기",
+    "roman": "An Chagi",
+    "pt": "Pontapé circular interior",
+    "category": "chagi",
+    "image": "chagui/an.jpg",
+    "note": "Pontapé em meia-lua de fora para dentro."
+  },
+  {
+    "id": "ck-twieo-yeop-chagi",
+    "hangul": "뛰어 옆 차기",
+    "roman": "Twieo Yeop Chagi",
+    "pt": "Pontapé lateral com salto",
+    "category": "chagi",
+    "image": "chagui/twieo-yeop.jpg",
+    "note": "Pontapé lateral executado no ar."
+  },
+  {
+    "id": "ck-mireo-chagi",
+    "hangul": "밀어 차기",
+    "roman": "Mireo Chagi",
+    "pt": "Pontapé de empurrão",
+    "category": "chagi",
+    "image": "chagui/Mireo.jpg",
+    "note": "Pontapé de impulso com a planta do pé para afastar o adversário."
+  },
+  {
+    "id": "ck-mondol-bandal-chagi",
+    "hangul": "몬돌 반달 차기",
+    "roman": "Mondol Bandal Chagi",
+    "pt": "Pontapé meia-lua com rotação",
+    "category": "chagi",
+    "image": "chagui/mondol-bandal.jpg",
+    "note": "Pontapé meia-lua executado com rotação completa do corpo."
+  },
+  {
+    "id": "ck-moldol-huryeo-chagi",
+    "hangul": "백 후려 차기",
+    "roman": "Moldol Huryeo Chagi",
+    "pt": "Pontapé de gancho com rotação",
+    "category": "chagi",
+    "image": "chagui/moldol-fury.jpg",
+    "note": "Pontapé de gancho executado com rotação de 360°."
   }
 ]
