@@ -1,46 +1,185 @@
 [
   {
-    "id": "hs-1", "situacao": "Agarrão ao pulso único",
+    "id": "hs-1",
+    "situacao": "Agarrão ao pulso único",
     "passos": [
-      { "descricao": "Rodar o pulso para dentro, em direção ao polegar do adversário (ponto mais fraco do agarrão)", "techniqueIds": [] },
-      { "descricao": "Puxar bruscamente para baixo e para trás, libertando o pulso", "techniqueIds": [] },
-      { "descricao": "Contra-ataque: golpe de cotovelo ao rosto ou corpo", "techniqueIds": ["at-palkup-chigi"] }
+      {
+        "descricao": "Rodar o pulso para dentro, em direção ao polegar do adversário (ponto mais fraco do agarrão)",
+        "techniqueIds": []
+      },
+      {
+        "descricao": "Puxar bruscamente para baixo e para trás, libertando o pulso",
+        "techniqueIds": []
+      },
+      {
+        "descricao": "Contra-ataque: golpe de cotovelo ao rosto ou corpo",
+        "techniqueIds": [
+          "at-palkup-chigi"
+        ]
+      }
     ]
   },
   {
-    "id": "hs-2", "situacao": "Agarrão ao pulso duplo",
+    "id": "hs-2",
+    "situacao": "Agarrão ao pulso duplo",
     "passos": [
-      { "descricao": "Elevar ambos os braços juntos até ao nível dos ombros", "techniqueIds": [] },
-      { "descricao": "Rodar bruscamente para um dos lados, separando os pulsos", "techniqueIds": [] },
-      { "descricao": "Contra-ataque: golpe de cotovelo ao corpo", "techniqueIds": ["at-palkup-chigi"] }
+      {
+        "descricao": "Elevar ambos os braços juntos até ao nível dos ombros",
+        "techniqueIds": []
+      },
+      {
+        "descricao": "Rodar bruscamente para um dos lados, separando os pulsos",
+        "techniqueIds": []
+      },
+      {
+        "descricao": "Contra-ataque: golpe de cotovelo ao corpo",
+        "techniqueIds": [
+          "at-palkup-chigi"
+        ]
+      }
     ]
   },
   {
-    "id": "hs-3", "situacao": "Agarrão ao colarinho",
+    "id": "hs-3",
+    "situacao": "Agarrão ao colarinho",
     "passos": [
-      { "descricao": "Cobrir a mão do adversário com as duas mãos, imobilizando-a", "techniqueIds": [] },
-      { "descricao": "Torcer o pulso em direção ao cotovelo do adversário (chave de pulso)", "techniqueIds": [] },
-      { "descricao": "Pressionar para baixo para desequilibrar o adversário", "techniqueIds": [] },
-      { "descricao": "Contra-ataque: pontapé frontal ou golpe de cutelo ao pescoço", "techniqueIds": ["ck-ap-chagi", "at-sonnal-chigi"] }
+      {
+        "descricao": "Cobrir a mão do adversário com as duas mãos, imobilizando-a",
+        "techniqueIds": []
+      },
+      {
+        "descricao": "Torcer o pulso em direção ao cotovelo do adversário (chave de pulso)",
+        "techniqueIds": []
+      },
+      {
+        "descricao": "Pressionar para baixo para desequilibrar o adversário",
+        "techniqueIds": []
+      },
+      {
+        "descricao": "Contra-ataque: pontapé frontal ou golpe de cutelo ao pescoço",
+        "techniqueIds": [
+          "ck-ap-chagi",
+          "at-sonnal-chigi"
+        ]
+      }
     ]
   },
   {
-    "id": "hs-4", "situacao": "Estrangulamento frontal",
+    "id": "hs-4",
+    "situacao": "Estrangulamento frontal",
     "passos": [
-      { "descricao": "Encolher o queixo imediatamente para proteger a garganta", "techniqueIds": [] },
-      { "descricao": "Elevar ambos os braços por dentro e para cima, abrindo as mãos do adversário", "techniqueIds": [] },
-      { "descricao": "Simultâneo: joelho ao baixo ventre ou pontapé ao joelho", "techniqueIds": ["ck-ap-chagi"] },
-      { "descricao": "Golpe de cotovelo ao queixo ou soco ao rosto", "techniqueIds": ["at-palkup-chigi", "at-eolgul-jireugi"] }
+      {
+        "descricao": "Encolher o queixo imediatamente para proteger a garganta",
+        "techniqueIds": []
+      },
+      {
+        "descricao": "Elevar ambos os braços por dentro e para cima, abrindo as mãos do adversário",
+        "techniqueIds": []
+      },
+      {
+        "descricao": "Simultâneo: joelho ao baixo ventre ou pontapé ao joelho",
+        "techniqueIds": [
+          "ck-ap-chagi"
+        ]
+      },
+      {
+        "descricao": "Golpe de cotovelo ao queixo ou soco ao rosto",
+        "techniqueIds": [
+          "at-palkup-chigi",
+          "at-eolgul-jireugi"
+        ]
+      }
     ]
   },
   {
-    "id": "hs-5", "situacao": "Estrangulamento traseiro",
+    "id": "hs-5",
+    "situacao": "Estrangulamento traseiro",
     "passos": [
-      { "descricao": "Encolher o queixo e baixar o centro de gravidade (dobrar os joelhos)", "techniqueIds": [] },
-      { "descricao": "Dar um passo largo para o lado, saindo da linha de pressão", "techniqueIds": [] },
-      { "descricao": "Golpe de cotovelo para trás ao solar plexus", "techniqueIds": ["at-palkup-chigi"] },
-      { "descricao": "Cabeçada para trás ao rosto do adversário", "techniqueIds": [] },
-      { "descricao": "Varrer a perna e contra-atacar em terra", "techniqueIds": ["ck-ap-chagi"] }
+      {
+        "descricao": "Encolher o queixo e baixar o centro de gravidade (dobrar os joelhos)",
+        "techniqueIds": []
+      },
+      {
+        "descricao": "Dar um passo largo para o lado, saindo da linha de pressão",
+        "techniqueIds": []
+      },
+      {
+        "descricao": "Golpe de cotovelo para trás ao solar plexus",
+        "techniqueIds": [
+          "at-palkup-chigi"
+        ]
+      },
+      {
+        "descricao": "Cabeçada para trás ao rosto do adversário",
+        "techniqueIds": []
+      },
+      {
+        "descricao": "Varrer a perna e contra-atacar em terra",
+        "techniqueIds": [
+          "ck-ap-chagi"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hs-c-1785940730461",
+    "situacao": "Agarrão no pulso com uma única mão",
+    "belt": "branco",
+    "passos": [
+      {
+        "descricao": "Desvio em Ap Kubi para o lado contrario em que a mão foi agarrada fazendo um movimento descendente com o objetivo que o atacante largue a mão previamente presa.",
+        "techniqueIds": [
+          "sq-apkubi"
+        ]
+      },
+      {
+        "descricao": "Ataque com a parte de trás da mão de forma a socar a tempora do adversário (continuando na posição que já se encontrava)",
+        "techniqueIds": []
+      }
+    ]
+  },
+  {
+    "id": "hs-c-1785941272669",
+    "situacao": "Agarrão no pulso com duas mãos (coloque a mão do mesmo lado por cima (mão esquerda do oponete e a sua mao esquerda) e a mão contrária a segurar o mesmo pulso por baixo.",
+    "belt": "branco",
+    "passos": [
+      {
+        "descricao": "Avançar em Ap Seogi e a mão que está a ser agarrada deve fazer um movimento para fora de forma a que a mão que está livre consiga agarrar nessa.",
+        "techniqueIds": [
+          "sq-ap"
+        ]
+      },
+      {
+        "descricao": "Após o agarro, cotovelada no oponente, com o braço que estava a ser agarrado e com a ajuda do outro.",
+        "techniqueIds": [
+          "sq-ap"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hs-c-1785941823789",
+    "situacao": "Agarrão do pulso com duas mãos (contrario do anterior)",
+    "belt": "branco",
+    "passos": [
+      {
+        "descricao": "Tendo em conta que não dá para dar a volta aos braços do adversário, agarro a minha mão entre os braços do adversário.",
+        "techniqueIds": []
+      },
+      {
+        "descricao": "Recuar em Ap Kubi com a perna do mesmo lado do braço agarrado de forma a desiquilibrar o adversário",
+        "techniqueIds": [
+          "sq-apkubi"
+        ]
+      },
+      {
+        "descricao": "Avançar dando uma cotovelada no plexo ",
+        "techniqueIds": []
+      },
+      {
+        "descricao": "Por fim levantar o cotovelo, dirigindo a cotovelada ao queixo do adversário",
+        "techniqueIds": []
+      }
     ]
   }
 ]

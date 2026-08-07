@@ -17,8 +17,8 @@
   },
   {
     "id": "sq-juchum",
+    "roman": "Chuchum Seogi",
     "hangul": "주춤 서기",
-    "roman": "Juchum Seogi",
     "pt": "Posição do cavaleiro",
     "category": "seogi",
     "note": "Pernas afastadas, joelhos flectidos, peso central."
@@ -33,16 +33,16 @@
   },
   {
     "id": "sq-apkubi",
+    "roman": "Ap Kubi Soegi",
     "hangul": "앞굽이",
-    "roman": "Apkubi",
     "pt": "Posição andante longa",
     "category": "seogi",
     "note": "Perna da frente flectida, perna de trás esticada."
   },
   {
     "id": "sq-dwitkubi",
+    "roman": "Dwi Kubi Soegi",
     "hangul": "뒷굽이",
-    "roman": "Dwitkubi",
     "pt": "Posição de trás (L)",
     "category": "seogi",
     "note": "Maioria do peso na perna de trás, forma de 'L'."
@@ -467,5 +467,21 @@
     "category": "makgi",
     "image": "techniques/sonnal-kodureo-naeryeo-makgi.jpg",
     "note": "Bloqueio baixo com cutelo apoiado pelo braço de suporte."
+  },
+  {
+    "id": "custom-1785938662571",
+    "roman": "Montong Baro Jireugi",
+    "hangul": "몸통 바로 지르기",
+    "pt": "Soco com mão contrária à perna",
+    "category": "jireugi",
+    "note": "Soco normalmente realizado na posição de Ap Soegi ou Ap kubi"
+  },
+  {
+    "id": "custom-1785939355739",
+    "roman": "Batangson Montong Magki",
+    "hangul": "",
+    "pt": "Defesa de dentro para fora usando o cutelo da mão.",
+    "category": "makgi",
+    "note": "Defesa usando a mão aberta e fazendo um movimento de forma a intercetar o ataque do oponente. o ponto de contacto é o cutelo da mão."
   }
 ]

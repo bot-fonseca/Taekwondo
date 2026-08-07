@@ -1,8 +1,6 @@
 [
   {
     "id": "taeguk-1",
-    "belt": "branco-amarelo",
-    "image": "t1.jpg",
     "group": "Taeguk",
     "index": 1,
     "name": "Taeguk 1 Jang",
@@ -10,31 +8,110 @@
     "trigram": "☰",
     "trigramName": "Keon (Céu)",
     "meaning": "O Céu e a luz — a fonte de toda a criação.",
-    "moves": 17,
+    "moves": 16,
+    "belt": "branco-amarelo",
+    "image": "t1.jpg",
     "steps": [
-      { "n": 1,  "technique": "Ap Seogi + Arae Makgi",                           "hangul": "앞 서기 / 아래 막기",                    "detail": "Vira à esquerda (90°), bloqueio baixo." },
-      { "n": 2,  "technique": "Ap Seogi + Momtong Jireugi",                       "hangul": "앞 서기 / 몸통 지르기",                  "detail": "Avança, soco médio." },
-      { "n": 3,  "technique": "Ap Seogi + Arae Makgi",                           "hangul": "앞 서기 / 아래 막기",                    "detail": "Vira à direita (180°), bloqueio baixo." },
-      { "n": 4,  "technique": "Ap Seogi + Momtong Jireugi",                       "hangul": "앞 서기 / 몸통 지르기",                  "detail": "Avança, soco médio." },
-      { "n": 5,  "technique": "Apkubi + Arae Makgi",                             "hangul": "앞굽이 / 아래 막기",                    "detail": "Vira à esquerda (90°), bloqueio baixo em posição longa." },
-      { "n": 6,  "technique": "Ap Seogi + An Makgi",                             "hangul": "앞 서기 / 안 막기",                     "detail": "Vira à direita, bloqueio de fora para dentro." },
-      { "n": 7,  "technique": "Ap Seogi + Momtong Jireugi",                       "hangul": "앞 서기 / 몸통 지르기",                  "detail": "Avança, soco médio." },
-      { "n": 8,  "technique": "Ap Seogi + An Makgi",                             "hangul": "앞 서기 / 안 막기",                     "detail": "Vira à esquerda, bloqueio de fora para dentro." },
-      { "n": 9,  "technique": "Ap Seogi + Momtong Jireugi",                       "hangul": "앞 서기 / 몸통 지르기",                  "detail": "Avança, soco médio." },
-      { "n": 10, "technique": "Apkubi + Arae Makgi",                             "hangul": "앞굽이 / 아래 막기",                    "detail": "Vira à direita (90°), bloqueio baixo longo." },
-      { "n": 11, "technique": "Ap Seogi + Eolgul Makgi + Ap Chagi",              "hangul": "앞 서기 / 얼굴 막기 / 앞 차기",           "detail": "Bloqueio alto, pontapé frontal, soco." },
-      { "n": 12, "technique": "Eolgul Makgi + Ap Chagi + Momtong Jireugi",       "hangul": "얼굴 막기 / 앞 차기 / 몸통 지르기",       "detail": "Lado oposto, bloqueio alto, pontapé, soco." },
-      { "n": 13, "technique": "Apkubi + Arae Makgi",                             "hangul": "앞굽이 / 아래 막기",                    "detail": "Vira à esquerda, bloqueio baixo longo." },
-      { "n": 14, "technique": "Ap Seogi + Momtong Jireugi",                       "hangul": "앞 서기 / 몸통 지르기",                  "detail": "Avança, soco médio (kihap)." },
-      { "n": 15, "technique": "Ap Seogi + Momtong An Makgi",                     "hangul": "앞 서기 / 몸통 안 막기",                 "detail": "Regressa, bloqueio médio." },
-      { "n": 16, "technique": "Ap Seogi + Momtong An Makgi",                     "hangul": "앞 서기 / 몸통 안 막기",                 "detail": "Lado oposto, bloqueio médio." },
-      { "n": 17, "technique": "Apkubi + Momtong Jireugi",                        "hangul": "앞굽이 / 몸통 지르기",                  "detail": "Avança em posição longa, soco médio, kihap." }
+      {
+        "n": 1,
+        "technique": "Ap Seogi + Arae Makgi",
+        "hangul": "앞 서기 / 아래 막기",
+        "detail": "Rotação à esquerda (90°), bloqueio baixo."
+      },
+      {
+        "n": 2,
+        "technique": "Ap Seogi + Momtong Bandae Jireugi",
+        "hangul": "앞 서기 / 몸통 지르기",
+        "detail": "Avança, soco médio."
+      },
+      {
+        "n": 3,
+        "technique": "Ap Seogi + Arae Makgi",
+        "hangul": "앞 서기 / 아래 막기",
+        "detail": "Rotação à direita (180°) pelas costas, bloqueio baixo."
+      },
+      {
+        "n": 4,
+        "technique": "Ap Seogi + Momtong Bandae Jireugi",
+        "hangul": "앞 서기 / 몸통 지르기",
+        "detail": "Avança, soco médio."
+      },
+      {
+        "n": 5,
+        "technique": "Apkubi + Arae Makgi + Montong Baro Jireugi",
+        "hangul": "앞굽이 / 아래 막기 / 몸통 지르기",
+        "detail": "Rotação à esquerda (90°), bloqueio baixo em posição longa, seguido de soco médio"
+      },
+      {
+        "n": 6,
+        "technique": "Ap Seogi + Momtong Makgi",
+        "hangul": "앞 서기 / 안 막기",
+        "detail": "Rotação à direita, bloqueio de fora para dentro."
+      },
+      {
+        "n": 7,
+        "technique": "Ap Seogi + Momtong Jireugi",
+        "hangul": "앞 서기 / 몸통 지르기",
+        "detail": "Avança, soco médio."
+      },
+      {
+        "n": 8,
+        "technique": "Ap Seogi + Momtong Makgi",
+        "hangul": "앞 서기 / 안 막기",
+        "detail": "Rotação à esquerda(180º), bloqueio de fora para dentro."
+      },
+      {
+        "n": 9,
+        "technique": "Ap Seogi + Momtong Jireugi",
+        "hangul": "앞 서기 / 몸통 지르기",
+        "detail": "Avança, soco médio."
+      },
+      {
+        "n": 10,
+        "technique": "Apkubi + Arae Makgi + Montong Baro Jireugi",
+        "hangul": "앞굽이 / 아래 막기 / 몸통 지르기",
+        "detail": "Rotação à direita (90°), bloqueio baixo longo, seguido de soco médio."
+      },
+      {
+        "n": 11,
+        "technique": "Ap Seogi + Eolgul Makgi",
+        "hangul": "앞 서기 / 얼굴 막기",
+        "detail": "Rotação à esquerda (90º), bloqueio alto."
+      },
+      {
+        "n": 12,
+        "technique": "Ap Chagi + Momtong Jireugi",
+        "hangul": "앞 차기 / 몸통 지르기",
+        "detail": "Pontapé médio frontal, seguido de soco."
+      },
+      {
+        "n": 13,
+        "technique": "Ap Seogi + Eolgul Makgi",
+        "hangul": "앞 서기 / 얼굴 막기",
+        "detail": "Rotação à direita (180º), defesa alta."
+      },
+      {
+        "n": 14,
+        "technique": "Ap Chagi + Momtong Jireugi",
+        "hangul": "앞 차기 / 몸통 지르기",
+        "detail": "Pontapé médio frontal, seguido de soco."
+      },
+      {
+        "n": 15,
+        "technique": "Apkubi + Arae Makgi",
+        "hangul": "앞굽이 / 아래 막기",
+        "detail": "Rotação à direita (90º), bloqueio baixo."
+      },
+      {
+        "n": 16,
+        "technique": "Apkubi + Momtong Jireugi",
+        "hangul": "앞 서기 / 몸통 지르기",
+        "detail": "Avança, soco médio (kihap)."
+      }
     ]
   },
   {
     "id": "taeguk-2",
-    "belt": "amarelo",
-    "image": "t2.jpg",
     "group": "Taeguk",
     "index": 2,
     "name": "Taeguk 2 Jang",
@@ -43,31 +120,121 @@
     "trigramName": "Tae (Lago)",
     "meaning": "A alegria e a serenidade interior, firmes por dentro.",
     "moves": 18,
+    "belt": "amarelo",
+    "image": "t2.jpg",
     "steps": [
-      { "n": 1,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 2,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 3,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 4,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 5,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 6,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 7,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 8,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 9,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 10, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 11, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 12, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 13, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 14, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 15, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 16, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 17, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 18, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." }
+      {
+        "n": 1,
+        "technique": "Ap Seogi + Arae Makgi",
+        "hangul": "앞 서기 / 아래 막기",
+        "detail": "Rotação à esquerda (90°), bloqueio baixo."
+      },
+      {
+        "n": 2,
+        "technique": "Apkubi + Momtong Bandae Jireugi",
+        "hangul": "앞굽이 / 몸통 지르기",
+        "detail": "Avança, soco dirigido ao plexo."
+      },
+      {
+        "n": 3,
+        "technique": "Ap Seogi + Arae Makgi",
+        "hangul": "앞 서기 / 아래 막기",
+        "detail": "Rotação à direita (180°), bloqueio baixo."
+      },
+      {
+        "n": 4,
+        "technique": "Apkubi + Momtong Bandae Jireugi",
+        "hangul": "앞굽이 / 몸통 지르기",
+        "detail": "Avança, soco dirigido ao plexo."
+      },
+      {
+        "n": 5,
+        "technique": "Ap Seogi + Momtong An Makgi",
+        "hangul": "—",
+        "detail": "Rotação à esquerda (90º), bloqueio médio."
+      },
+      {
+        "n": 6,
+        "technique": "Ap Seogi + Momtong An Makgi",
+        "hangul": "—",
+        "detail": "Avanço, bloqueio médio."
+      },
+      {
+        "n": 7,
+        "technique": "Ap Seogi + Arae Makgi",
+        "hangul": "앞 서기 / 아래 막기",
+        "detail": "Rotação à esquerda (90º), defesa baixa."
+      },
+      {
+        "n": 8,
+        "technique": "Ap Chagi +  Olgul Bandae Jireugi",
+        "hangul": "-",
+        "detail": "Pontapé médio frontal, seguido de soco dirigido à face."
+      },
+      {
+        "n": 9,
+        "technique": "Ap Seogi + Arae Makgi",
+        "hangul": "앞 서기 / 아래 막기",
+        "detail": "Rotação à direita (180º), defesa baixa."
+      },
+      {
+        "n": 10,
+        "technique": "Ap Chagi +  Olgul Bandae Jireugi",
+        "hangul": "—",
+        "detail": "Pontapé médio frontal, seguido de soco dirigido à face."
+      },
+      {
+        "n": 11,
+        "technique": "Ap Seogi + Olgul Makgi",
+        "hangul": "—",
+        "detail": "Rotação à esquerda (90º), defesa alta"
+      },
+      {
+        "n": 12,
+        "technique": "Ap Seogi + Olgul Makgi",
+        "hangul": "—",
+        "detail": "Avançar, defesa alta"
+      },
+      {
+        "n": 13,
+        "technique": "Ap Seogi + Momtong An Makgi",
+        "hangul": "—",
+        "detail": "Rotação pela frente (90º), defesa média"
+      },
+      {
+        "n": 14,
+        "technique": "Ap Seogi + Momtong An Makgi",
+        "hangul": "—",
+        "detail": "Rotação pelas costas (180º), defesa média."
+      },
+      {
+        "n": 15,
+        "technique": "Ap Seogi + Arae Makgi",
+        "hangul": "—",
+        "detail": "Rotação pelas costas (180º), defesa baixa."
+      },
+      {
+        "n": 16,
+        "technique": "Ap Chagi +  Momtong Bandae Jireugi",
+        "hangul": "—",
+        "detail": "Pontapé médio frontal, seguido de soco dirigido ao plexo."
+      },
+      {
+        "n": 17,
+        "technique": "Ap Chagi +  Momtong Bandae Jireugi",
+        "hangul": "—",
+        "detail": "Pontapé médio frontal, seguido de soco dirigido ao plexo."
+      },
+      {
+        "n": 18,
+        "technique": "Ap Chagi +  Momtong Bandae Jireugi",
+        "hangul": "—",
+        "detail": "Pontapé médio frontal, seguido de soco dirigido ao plexo (kihap)."
+      }
     ]
   },
   {
     "id": "taeguk-3",
-    "belt": "amarelo-verde",
-    "image": "t3.jpg",
     "group": "Taeguk",
     "index": 3,
     "name": "Taeguk 3 Jang",
@@ -76,27 +243,129 @@
     "trigramName": "Ri (Fogo)",
     "meaning": "O Fogo e o calor — entusiasmo e energia.",
     "moves": 20,
+    "belt": "amarelo-verde",
+    "image": "t3.jpg",
     "steps": [
-      { "n": 1,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 2,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 3,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 4,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 5,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 6,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 7,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 8,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 9,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 10, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 11, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 12, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 13, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 14, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 15, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 16, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 17, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 18, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 19, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 20, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." }
+      {
+        "n": 1,
+        "technique": "Ap Seogi + Area Makgi",
+        "hangul": "앞 서기 / 아래 막기",
+        "detail": "Vira à esquerda (90°), bloqueio baixo."
+      },
+      {
+        "n": 2,
+        "technique": "Ap Chagi + Momtong Bandae Jiruegi + Momtong Baro Jiruegi",
+        "hangul": "—",
+        "detail": "Pontapé médio frontal, ficando em Ap Kubi seguido de Dubeon Jireugi."
+      },
+      {
+        "n": 3,
+        "technique": "Ap Seogi + Area Makgi",
+        "hangul": "앞 서기 / 아래 막기",
+        "detail": "Rotação pelas costas (180º), bloqueio baixo."
+      },
+      {
+        "n": 4,
+        "technique": "Ap Chagi + Momtong Bandae Jiruegi + Momtong Baro Jiruegi",
+        "hangul": "—",
+        "detail": "Pontapé médio frontal, ficando em Ap Kubi seguido de Dubeon Jireugi."
+      },
+      {
+        "n": 5,
+        "technique": "Ap Seogi + Han Sonnal Mok Chigi",
+        "hangul": "—",
+        "detail": "Rotação pelas costas (90º), ataque dirigido ao pescoço."
+      },
+      {
+        "n": 6,
+        "technique": "Ap Seogi + Han Sonnal Mok Chigi",
+        "hangul": "—",
+        "detail": "Avançar, ataque dirigido ao pescoço."
+      },
+      {
+        "n": 7,
+        "technique": "Dwi Kubi Soegi + Han Sonnal Momtong Makgi",
+        "hangul": "—",
+        "detail": "Deslocamento para a esquerda, com defesa de dentro para fora de mão aberta."
+      },
+      {
+        "n": 8,
+        "technique": "Ap Kubi Soegi + Momtong Baro Jireugi",
+        "hangul": "—",
+        "detail": "Passagem de Dwi Kubi Soegi para Ap Kubi Soegi com soco dirigido ao plexo."
+      },
+      {
+        "n": 9,
+        "technique": "Dwi Kubi Soegi + Han Sonnal Momtong Makgi",
+        "hangul": "—",
+        "detail": "Rotação pela direita (180º), com defesa de dentro para fora de mão aberta."
+      },
+      {
+        "n": 10,
+        "technique": "Ap Kubi Soegi + Momtong Baro Jireugi",
+        "hangul": "—",
+        "detail": "Passagem de Dwi Kubi Soegi para Ap Kubi Soegi com soco dirigido ao plexo."
+      },
+      {
+        "n": 11,
+        "technique": "Ap Seogi + Momtong An Makgi",
+        "hangul": "—",
+        "detail": "Rotação para a esquerda (90º), defesa média."
+      },
+      {
+        "n": 12,
+        "technique": "Ap Seogi + Momtong An Makgi",
+        "hangul": "—",
+        "detail": "Avançar, defesa média"
+      },
+      {
+        "n": 13,
+        "technique": "Ap Seogi + Area Makgi",
+        "hangul": "앞 서기 / 아래 막기",
+        "detail": "Rotação para a esquerda (90º), defesa baixa."
+      },
+      {
+        "n": 14,
+        "technique": "Ap Chagi + Momtong Bandae Jiruegi + Momtong Baro Jiruegi",
+        "hangul": "—",
+        "detail": "Pontapé médio frontal, ficando em Ap Kubi seguido de Dubeon Jireugi."
+      },
+      {
+        "n": 15,
+        "technique": "Ap Seogi + Area Makgi",
+        "hangul": "앞 서기 / 아래 막기",
+        "detail": "Rotação pelas costas (direita, 90º), defesa baixa."
+      },
+      {
+        "n": 16,
+        "technique": "Ap Chagi + Momtong Bandae Jiruegi + Momtong Baro Jiruegi",
+        "hangul": "—",
+        "detail": "Pontapé médio frontal, ficando em Ap Kubi seguido de Dubeon Jireugi."
+      },
+      {
+        "n": 17,
+        "technique": "Ap Seogi + Area Makgi + Momtong Baro Jiruegi",
+        "hangul": "-",
+        "detail": "Pontapé médio frontal, ficando em Ap Seogi seguido de Dubeon Jireugi."
+      },
+      {
+        "n": 18,
+        "technique": "Ap Seogi + Area Makgi + Momtong Baro Jiruegi",
+        "hangul": "—",
+        "detail": "Avançar, pontapé médio frontal, ficando em Ap Seogi seguido de Dubeon Jireugi."
+      },
+      {
+        "n": 19,
+        "technique": "Ap Chagi + Ap Seogi + Area Makgi + Momtong Baro Jiruegi",
+        "hangul": "—",
+        "detail": "Pontapé médio frontal, avançar ficando em Ap Seogi seguido defesa baixa e de Dubeon Jireugi."
+      },
+      {
+        "n": 20,
+        "technique": "Ap Chagi + Ap Seogi + Area Makgi + Momtong Baro Jiruegi",
+        "hangul": "—",
+        "detail": "Pontapé médio frontal, avançar ficando em Ap Seogi seguido defesa baixa e de Dubeon Jireugi (kihap)."
+      }
     ]
   },
   {
@@ -112,26 +381,126 @@
     "meaning": "O Trovão — poder e dignidade, calma perante o perigo.",
     "moves": 20,
     "steps": [
-      { "n": 1,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 2,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 3,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 4,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 5,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 6,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 7,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 8,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 9,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 10, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 11, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 12, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 13, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 14, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 15, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 16, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 17, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 18, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 19, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 20, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." }
+      {
+        "n": 1,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 2,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 3,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 4,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 5,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 6,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 7,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 8,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 9,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 10,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 11,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 12,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 13,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 14,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 15,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 16,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 17,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 18,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 19,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 20,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      }
     ]
   },
   {
@@ -147,26 +516,126 @@
     "meaning": "O Vento — força suave mas penetrante.",
     "moves": 20,
     "steps": [
-      { "n": 1,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 2,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 3,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 4,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 5,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 6,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 7,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 8,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 9,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 10, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 11, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 12, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 13, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 14, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 15, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 16, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 17, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 18, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 19, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 20, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." }
+      {
+        "n": 1,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 2,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 3,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 4,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 5,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 6,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 7,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 8,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 9,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 10,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 11,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 12,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 13,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 14,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 15,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 16,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 17,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 18,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 19,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 20,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      }
     ]
   },
   {
@@ -182,25 +651,120 @@
     "meaning": "A Água — fluidez que ultrapassa qualquer obstáculo.",
     "moves": 19,
     "steps": [
-      { "n": 1,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 2,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 3,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 4,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 5,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 6,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 7,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 8,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 9,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 10, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 11, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 12, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 13, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 14, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 15, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 16, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 17, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 18, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 19, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." }
+      {
+        "n": 1,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 2,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 3,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 4,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 5,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 6,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 7,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 8,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 9,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 10,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 11,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 12,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 13,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 14,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 15,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 16,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 17,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 18,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 19,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      }
     ]
   },
   {
@@ -216,27 +780,132 @@
     "meaning": "A Montanha — firmeza, ponderação e estabilidade.",
     "moves": 21,
     "steps": [
-      { "n": 1,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 2,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 3,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 4,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 5,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 6,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 7,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 8,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 9,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 10, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 11, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 12, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 13, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 14, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 15, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 16, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 17, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 18, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 19, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 20, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 21, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." }
+      {
+        "n": 1,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 2,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 3,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 4,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 5,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 6,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 7,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 8,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 9,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 10,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 11,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 12,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 13,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 14,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 15,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 16,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 17,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 18,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 19,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 20,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 21,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      }
     ]
   },
   {
@@ -252,30 +921,150 @@
     "meaning": "A Terra — o fim de um ciclo e o início de outro.",
     "moves": 24,
     "steps": [
-      { "n": 1,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 2,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 3,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 4,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 5,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 6,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 7,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 8,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 9,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 10, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 11, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 12, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 13, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 14, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 15, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 16, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 17, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 18, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 19, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 20, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 21, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 22, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 23, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 24, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." }
+      {
+        "n": 1,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 2,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 3,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 4,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 5,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 6,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 7,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 8,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 9,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 10,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 11,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 12,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 13,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 14,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 15,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 16,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 17,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 18,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 19,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 20,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 21,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 22,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 23,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 24,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      }
     ]
   },
   {
@@ -290,23 +1079,108 @@
     "meaning": "O Céu e a luz — a fonte de toda a criação.",
     "moves": 17,
     "steps": [
-      { "n": 1,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 2,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 3,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 4,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 5,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 6,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 7,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 8,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 9,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 10, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 11, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 12, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 13, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 14, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 15, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 16, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 17, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." }
+      {
+        "n": 1,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 2,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 3,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 4,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 5,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 6,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 7,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 8,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 9,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 10,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 11,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 12,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 13,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 14,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 15,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 16,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 17,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      }
     ]
   },
   {
@@ -320,29 +1194,144 @@
     "meaning": "A alegria e a serenidade interior, firmes por dentro.",
     "moves": 23,
     "steps": [
-      { "n": 1,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 2,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 3,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 4,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 5,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 6,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 7,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 8,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 9,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 10, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 11, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 12, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 13, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 14, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 15, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 16, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 17, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 18, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 19, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 20, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 21, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 22, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 23, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." }
+      {
+        "n": 1,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 2,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 3,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 4,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 5,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 6,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 7,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 8,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 9,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 10,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 11,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 12,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 13,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 14,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 15,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 16,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 17,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 18,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 19,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 20,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 21,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 22,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 23,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      }
     ]
   },
   {
@@ -356,28 +1345,138 @@
     "meaning": "O Fogo e o calor — entusiasmo e energia.",
     "moves": 22,
     "steps": [
-      { "n": 1,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 2,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 3,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 4,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 5,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 6,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 7,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 8,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 9,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 10, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 11, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 12, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 13, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 14, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 15, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 16, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 17, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 18, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 19, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 20, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 21, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 22, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." }
+      {
+        "n": 1,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 2,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 3,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 4,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 5,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 6,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 7,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 8,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 9,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 10,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 11,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 12,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 13,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 14,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 15,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 16,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 17,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 18,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 19,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 20,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 21,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 22,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      }
     ]
   },
   {
@@ -391,26 +1490,126 @@
     "meaning": "O Trovão — poder e dignidade, calma perante o perigo.",
     "moves": 20,
     "steps": [
-      { "n": 1,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 2,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 3,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 4,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 5,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 6,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 7,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 8,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 9,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 10, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 11, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 12, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 13, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 14, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 15, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 16, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 17, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 18, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 19, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 20, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." }
+      {
+        "n": 1,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 2,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 3,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 4,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 5,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 6,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 7,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 8,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 9,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 10,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 11,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 12,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 13,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 14,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 15,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 16,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 17,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 18,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 19,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 20,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      }
     ]
   },
   {
@@ -424,28 +1623,138 @@
     "meaning": "O Vento — força suave mas penetrante.",
     "moves": 22,
     "steps": [
-      { "n": 1,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 2,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 3,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 4,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 5,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 6,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 7,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 8,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 9,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 10, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 11, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 12, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 13, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 14, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 15, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 16, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 17, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 18, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 19, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 20, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 21, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 22, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." }
+      {
+        "n": 1,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 2,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 3,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 4,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 5,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 6,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 7,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 8,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 9,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 10,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 11,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 12,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 13,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 14,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 15,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 16,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 17,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 18,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 19,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 20,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 21,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 22,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      }
     ]
   },
   {
@@ -459,25 +1768,120 @@
     "meaning": "A Água — fluidez que ultrapassa qualquer obstáculo.",
     "moves": 19,
     "steps": [
-      { "n": 1,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 2,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 3,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 4,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 5,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 6,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 7,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 8,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 9,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 10, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 11, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 12, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 13, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 14, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 15, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 16, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 17, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 18, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 19, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." }
+      {
+        "n": 1,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 2,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 3,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 4,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 5,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 6,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 7,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 8,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 9,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 10,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 11,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 12,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 13,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 14,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 15,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 16,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 17,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 18,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 19,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      }
     ]
   },
   {
@@ -491,26 +1895,126 @@
     "meaning": "A Montanha — firmeza, ponderação e estabilidade.",
     "moves": 20,
     "steps": [
-      { "n": 1,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 2,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 3,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 4,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 5,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 6,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 7,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 8,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 9,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 10, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 11, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 12, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 13, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 14, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 15, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 16, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 17, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 18, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 19, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 20, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." }
+      {
+        "n": 1,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 2,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 3,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 4,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 5,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 6,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 7,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 8,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 9,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 10,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 11,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 12,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 13,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 14,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 15,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 16,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 17,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 18,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 19,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 20,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      }
     ]
   },
   {
@@ -524,30 +2028,150 @@
     "meaning": "A Terra — o fim de um ciclo e o início de outro.",
     "moves": 24,
     "steps": [
-      { "n": 1,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 2,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 3,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 4,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 5,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 6,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 7,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 8,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 9,  "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 10, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 11, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 12, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 13, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 14, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 15, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 16, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 17, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 18, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 19, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 20, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 21, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 22, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 23, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." },
-      { "n": 24, "technique": "—", "hangul": "—", "detail": "Sequência de movimento (consultar instrutor)." }
+      {
+        "n": 1,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 2,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 3,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 4,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 5,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 6,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 7,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 8,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 9,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 10,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 11,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 12,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 13,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 14,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 15,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 16,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 17,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 18,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 19,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 20,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 21,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 22,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 23,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      },
+      {
+        "n": 24,
+        "technique": "—",
+        "hangul": "—",
+        "detail": "Sequência de movimento (consultar instrutor)."
+      }
     ]
   }
 ]
