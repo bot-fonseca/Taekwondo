@@ -1,6 +1,6 @@
 import { SEQUENCIAS, setSequencias } from "../data/pratica";
 import type { Sequencia, SequenciaStep } from "../data/pratica";
-import { saveResource, DEV_ONLY_MSG } from "./useAdminSave";
+import { saveResource } from "./useAdminSave";
 
 export function useSequencias() {
   // SEQUENCIAS is a live ESM binding — always reflects the current module state
@@ -17,12 +17,8 @@ export function useSequencias() {
         criadaEm: Date.now(),
       };
       const updated = [nova, ...SEQUENCIAS];
-      try {
-        await saveResource("sequences", updated);
-        setSequencias(updated);
-      } catch (err: any) {
-        throw new Error(err.message?.includes("fetch") ? DEV_ONLY_MSG : (err.message ?? String(err)));
-      }
+      await saveResource("sequences", updated);
+      setSequencias(updated);
       return nova;
     },
 
@@ -30,22 +26,14 @@ export function useSequencias() {
       const updated = SEQUENCIAS.map(s =>
         s.id === id ? { ...s, nome, descricao: descricao || undefined, belt: belt || undefined, passos } : s
       );
-      try {
-        await saveResource("sequences", updated);
-        setSequencias(updated);
-      } catch (err: any) {
-        throw new Error(err.message?.includes("fetch") ? DEV_ONLY_MSG : (err.message ?? String(err)));
-      }
+      await saveResource("sequences", updated);
+      setSequencias(updated);
     },
 
     async eliminar(id: string): Promise<void> {
       const updated = SEQUENCIAS.filter(s => s.id !== id);
-      try {
-        await saveResource("sequences", updated);
-        setSequencias(updated);
-      } catch (err: any) {
-        throw new Error(err.message?.includes("fetch") ? DEV_ONLY_MSG : (err.message ?? String(err)));
-      }
+      await saveResource("sequences", updated);
+      setSequencias(updated);
     },
   };
 }

@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { POOMSAE, setPoomsae, type Poomsae, type PoomsaeStep } from "../../data/taekwondo";
-import { BELTS } from "../../data/pratica";
-import { saveResource, DEV_ONLY_MSG } from "../../hooks/useAdminSave";
-import { BeltStrip } from "../BeltStrip";
+import { saveResource } from "../../hooks/useAdminSave";
+import { BeltPicker } from "../BeltPicker";
 import { DetailHeader } from "./DetailHeader";
 
 const TRIGRAMS_LIST = [
@@ -78,9 +77,14 @@ export function PoomsaeEditor({ editId, onSaved, onCancel }: {
     setSaving(true);
     try {
       const id = editId ?? `custom-${Date.now()}`;
-      const idx = editId
-        ? (existing?.index ?? POOMSAE.filter(p => p.group === group).length + 1)
-        : POOMSAE.filter(p => p.group === group).length + 1;
+      // Mantém o índice ao editar no mesmo grupo; caso contrário vai para o fim do grupo
+      const nextIndex = POOMSAE.filter(p => p.group === group && p.id !== editId)
+        .reduce((m, p) => Math.max(m, p.index), 0) + 1;
+      const idx = existing && existing.group === group ? existing.index : nextIndex;
+      const cleanSteps = steps
+        .map(s => ({ technique: s.technique.trim(), hangul: s.hangul.trim(), detail: s.detail.trim() }))
+        .filter(s => s.technique || s.hangul || s.detail)
+        .map((s, i) => ({ n: i + 1, ...s }));
       const entry: Poomsae = {
         id,
         group,
@@ -90,10 +94,10 @@ export function PoomsaeEditor({ editId, onSaved, onCancel }: {
         trigram,
         trigramName,
         meaning: meaning.trim(),
-        moves: steps.length,
+        moves: cleanSteps.length,
         belt: belt || undefined,
         image: image.trim() || undefined,
-        steps: steps.map((s, i) => ({ ...s, n: i + 1 })),
+        steps: cleanSteps,
       };
       const updated = editId
         ? POOMSAE.map(p => p.id === editId ? entry : p)
@@ -102,7 +106,7 @@ export function PoomsaeEditor({ editId, onSaved, onCancel }: {
       setPoomsae(updated);
       onSaved(entry.id);
     } catch (err: any) {
-      alert(err.message?.includes("fetch") ? DEV_ONLY_MSG : (err.message ?? String(err)));
+      alert(err.message ?? String(err));
     } finally {
       setSaving(false);
     }
@@ -191,24 +195,7 @@ export function PoomsaeEditor({ editId, onSaved, onCancel }: {
         </div>
 
         {/* Cinto */}
-        <div>
-          <label className="font-display block mb-1.5" style={labelStyle}>Cinto</label>
-          <div className="flex flex-wrap gap-1.5">
-            <button type="button" onClick={() => setBelt("")}
-              className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 font-display transition-colors"
-              style={{ fontSize: 10, letterSpacing: "0.04em", textTransform: "uppercase", background: !belt ? "var(--tkd-surface)" : "transparent", color: !belt ? "var(--tkd-text)" : "var(--tkd-muted)", border: `1px solid ${!belt ? "var(--tkd-muted)" : "var(--tkd-border)"}` }}>
-              Nenhum
-            </button>
-            {BELTS.map(b => (
-              <button key={b.id} type="button" onClick={() => setBelt(b.id)}
-                className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 font-display transition-colors"
-                style={{ fontSize: 10, letterSpacing: "0.04em", textTransform: "uppercase", background: belt === b.id ? b.color + "22" : "transparent", color: belt === b.id ? b.color : "var(--tkd-muted)", border: `1px solid ${belt === b.id ? b.color : "var(--tkd-border)"}` }}>
-                <BeltStrip color={b.color} stripe={b.stripe} width={22} height={6} />
-                {b.label}
-              </button>
-            ))}
-          </div>
-        </div>
+        <BeltPicker value={belt} onChange={setBelt} />
 
         {/* Significado */}
         <div>

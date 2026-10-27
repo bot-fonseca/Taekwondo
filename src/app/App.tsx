@@ -23,6 +23,7 @@ import { BeltScreen } from "./components/screens/BeltScreen";
 import { BeltDetail } from "./components/screens/BeltDetail";
 import { Lock, LockOpen, Sun, Moon } from "lucide-react";
 import { useTheme } from "./context/ThemeContext";
+import { useDataVersion } from "./data/store";
 
 type Detail =
   | { type: "technique"; id: string }
@@ -35,14 +36,33 @@ type PraticaView =
   | { screen: "hub" }
   | { screen: "belt-detail"; beltId: string }
   | { screen: "hanbeon" }
-  | { screen: "hanbeon-detail"; id: string }
+  | { screen: "hanbeon-detail"; id: string; returnBelt?: string }
   | { screen: "hanbeon-editor"; editId?: string; prefillBelt?: string; returnBelt?: string }
   | { screen: "hoshin" }
-  | { screen: "hoshin-detail"; id: string }
+  | { screen: "hoshin-detail"; id: string; returnBelt?: string }
   | { screen: "hoshin-editor"; editId?: string; prefillBelt?: string; returnBelt?: string }
   | { screen: "sequencias" }
-  | { screen: "sequencia-detail"; id: string }
+  | { screen: "sequencia-detail"; id: string; returnBelt?: string }
   | { screen: "sequencia-editor"; editId?: string; prefillBelt?: string; returnBelt?: string };
+
+// Voltar de um detalhe: para o cinto de onde veio, ou para a lista completa
+function backTo(returnBelt: string | undefined, list: PraticaView): PraticaView {
+  return returnBelt ? { screen: "belt-detail", beltId: returnBelt } : list;
+}
+
+// Sair de um editor: edição → volta ao detalhe; novo a partir de um cinto → volta ao cinto;
+// novo a partir da lista → abre o detalhe criado (ou volta à lista se cancelado)
+function leaveEditor(
+  v: { editId?: string; returnBelt?: string },
+  toDetail: (id: string, returnBelt?: string) => PraticaView,
+  list: PraticaView,
+) {
+  return (savedId?: string): PraticaView => {
+    if (v.editId) return toDetail(v.editId, v.returnBelt);
+    if (v.returnBelt) return { screen: "belt-detail", beltId: v.returnBelt };
+    return savedId ? toDetail(savedId) : list;
+  };
+}
 
 export default function App() {
   const [tab, setTab] = useState<TabId>("home");
@@ -51,6 +71,7 @@ export default function App() {
   const [techFilter, setTechFilter] = useState<import("./data/taekwondo").CategoryId>("seogi");
   const { isAdmin, unlock, lock } = useAdmin();
   const { theme, toggle: toggleTheme } = useTheme();
+  useDataVersion(); // re-renderiza quando os dados são guardados/eliminados
 
   const openTechnique = (id: string) => setDetail({ type: "technique", id });
   const openPoomsae = (id: string) => setDetail({ type: "poomsae", id });
@@ -73,76 +94,66 @@ export default function App() {
             onAllSeq={() => setPratica({ screen: "sequencias" })}
           />
         );
-      case "belt-detail":
+      case "belt-detail": {
+        const returnBelt = pratica.beltId;
         return (
           <BeltDetail
             beltId={pratica.beltId}
             onBack={() => setPratica({ screen: "hub" })}
             onOpenPoomsae={openPoomsae}
-            onOpenHanbeon={id => setPratica({ screen: "hanbeon-detail", id })}
-            onOpenHoShin={id => setPratica({ screen: "hoshin-detail", id })}
-            onOpenSeq={id => setPratica({ screen: "sequencia-detail", id })}
-            onNovoHanbeon={() => setPratica({ screen: "hanbeon-editor", prefillBelt: pratica.beltId, returnBelt: pratica.beltId })}
-            onNovoHoShin={() => setPratica({ screen: "hoshin-editor", prefillBelt: pratica.beltId, returnBelt: pratica.beltId })}
-            onNovaSeq={() => setPratica({ screen: "sequencia-editor", prefillBelt: pratica.beltId, returnBelt: pratica.beltId })}
+            onOpenHanbeon={id => setPratica({ screen: "hanbeon-detail", id, returnBelt })}
+            onOpenHoShin={id => setPratica({ screen: "hoshin-detail", id, returnBelt })}
+            onOpenSeq={id => setPratica({ screen: "sequencia-detail", id, returnBelt })}
+            onNovoHanbeon={() => setPratica({ screen: "hanbeon-editor", prefillBelt: returnBelt, returnBelt })}
+            onNovoHoShin={() => setPratica({ screen: "hoshin-editor", prefillBelt: returnBelt, returnBelt })}
+            onNovaSeq={() => setPratica({ screen: "sequencia-editor", prefillBelt: returnBelt, returnBelt })}
           />
         );
+      }
       case "hanbeon":
         return <HanbeonScreen onOpen={id => setPratica({ screen: "hanbeon-detail", id })} onNovo={() => setPratica({ screen: "hanbeon-editor" })} />;
       case "hanbeon-detail":
         return (
           <HanbeonDetail
             id={pratica.id}
-            onBack={() => setPratica({ screen: "hanbeon" })}
+            onBack={() => setPratica(backTo(pratica.returnBelt, { screen: "hanbeon" }))}
             onOpenTechnique={openTechnique}
-            onEdit={() => setPratica({ screen: "hanbeon-editor", editId: pratica.id })}
+            onEdit={() => setPratica({ screen: "hanbeon-editor", editId: pratica.id, returnBelt: pratica.returnBelt })}
           />
         );
-      case "hanbeon-editor":
+      case "hanbeon-editor": {
+        const exit = leaveEditor(pratica, (id, returnBelt) => ({ screen: "hanbeon-detail", id, returnBelt }), { screen: "hanbeon" });
         return (
           <HanbeonEditor
             editId={pratica.editId}
             prefillBelt={pratica.prefillBelt}
-            onSaved={id => setPratica(
-              pratica.returnBelt
-                ? { screen: "belt-detail", beltId: pratica.returnBelt }
-                : { screen: "hanbeon-detail", id }
-            )}
-            onCancel={() => setPratica(
-              pratica.returnBelt
-                ? { screen: "belt-detail", beltId: pratica.returnBelt }
-                : pratica.editId ? { screen: "hanbeon-detail", id: pratica.editId } : { screen: "hanbeon" }
-            )}
+            onSaved={id => setPratica(exit(id))}
+            onCancel={() => setPratica(exit())}
           />
         );
+      }
       case "hoshin":
         return <HoShinScreen onOpen={id => setPratica({ screen: "hoshin-detail", id })} onNovo={() => setPratica({ screen: "hoshin-editor" })} />;
       case "hoshin-detail":
         return (
           <HoShinDetail
             id={pratica.id}
-            onBack={() => setPratica({ screen: "hoshin" })}
+            onBack={() => setPratica(backTo(pratica.returnBelt, { screen: "hoshin" }))}
             onOpenTechnique={openTechnique}
-            onEdit={() => setPratica({ screen: "hoshin-editor", editId: pratica.id })}
+            onEdit={() => setPratica({ screen: "hoshin-editor", editId: pratica.id, returnBelt: pratica.returnBelt })}
           />
         );
-      case "hoshin-editor":
+      case "hoshin-editor": {
+        const exit = leaveEditor(pratica, (id, returnBelt) => ({ screen: "hoshin-detail", id, returnBelt }), { screen: "hoshin" });
         return (
           <HoShinEditor
             editId={pratica.editId}
             prefillBelt={pratica.prefillBelt}
-            onSaved={id => setPratica(
-              pratica.returnBelt
-                ? { screen: "belt-detail", beltId: pratica.returnBelt }
-                : { screen: "hoshin-detail", id }
-            )}
-            onCancel={() => setPratica(
-              pratica.returnBelt
-                ? { screen: "belt-detail", beltId: pratica.returnBelt }
-                : pratica.editId ? { screen: "hoshin-detail", id: pratica.editId } : { screen: "hoshin" }
-            )}
+            onSaved={id => setPratica(exit(id))}
+            onCancel={() => setPratica(exit())}
           />
         );
+      }
       case "sequencias":
         return (
           <SequenciasScreen
@@ -154,30 +165,22 @@ export default function App() {
         return (
           <SequenciaDetail
             id={pratica.id}
-            onBack={() => setPratica({ screen: "sequencias" })}
-            onEdit={() => setPratica({ screen: "sequencia-editor", editId: pratica.id })}
+            onBack={() => setPratica(backTo(pratica.returnBelt, { screen: "sequencias" }))}
+            onEdit={() => setPratica({ screen: "sequencia-editor", editId: pratica.id, returnBelt: pratica.returnBelt })}
             onOpenTechnique={openTechnique}
           />
         );
-      case "sequencia-editor":
+      case "sequencia-editor": {
+        const exit = leaveEditor(pratica, (id, returnBelt) => ({ screen: "sequencia-detail", id, returnBelt }), { screen: "sequencias" });
         return (
           <SequenciaEditor
             editId={pratica.editId}
             prefillBelt={pratica.prefillBelt}
-            onSaved={id => setPratica(
-              pratica.returnBelt
-                ? { screen: "belt-detail", beltId: pratica.returnBelt }
-                : { screen: "sequencia-detail", id }
-            )}
-            onCancel={() => setPratica(
-              pratica.returnBelt
-                ? { screen: "belt-detail", beltId: pratica.returnBelt }
-                : pratica.editId
-                  ? { screen: "sequencia-detail", id: pratica.editId }
-                  : { screen: "sequencias" }
-            )}
+            onSaved={id => setPratica(exit(id))}
+            onCancel={() => setPratica(exit())}
           />
         );
+      }
     }
   }
 

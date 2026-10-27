@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { CATEGORIES, TECHNIQUES } from "../../data/taekwondo";
-import { HANBEON, setHanbeon, BELTS, type HanbeonStep } from "../../data/pratica";
-import { saveResource, DEV_ONLY_MSG } from "../../hooks/useAdminSave";
-import { BeltStrip } from "../BeltStrip";
+import { HANBEON, setHanbeon, type HanbeonKyorugi, type HanbeonStep } from "../../data/pratica";
+import { saveResource } from "../../hooks/useAdminSave";
+import { BeltPicker } from "../BeltPicker";
+import { TechniqueMultiPicker } from "../TechniqueMultiPicker";
 import { DetailHeader } from "./DetailHeader";
 
 const ROLES: { value: HanbeonStep["papel"]; label: string }[] = [
@@ -12,35 +12,6 @@ const ROLES: { value: HanbeonStep["papel"]; label: string }[] = [
 
 function newStep(): HanbeonStep {
   return { papel: "defensor", descricao: "", techniqueIds: [] };
-}
-
-function TechniqueMultiPicker({ values, onChange }: { values: string[]; onChange: (ids: string[]) => void }) {
-  const toggle = (id: string) =>
-    onChange(values.includes(id) ? values.filter(x => x !== id) : [...values, id]);
-  return (
-    <div className="flex flex-wrap gap-1.5 mt-1">
-      {CATEGORIES.map(cat =>
-        TECHNIQUES.filter(t => t.category === cat.id).map(t => (
-          <button
-            key={t.id}
-            type="button"
-            onClick={() => toggle(t.id)}
-            className="rounded-lg px-2.5 py-1 font-display transition-colors"
-            style={{
-              fontSize: 10,
-              letterSpacing: "0.04em",
-              textTransform: "uppercase",
-              background: values.includes(t.id) ? "var(--tkd-blue)" : "var(--tkd-bg)",
-              color: values.includes(t.id) ? "#fff" : "var(--tkd-muted)",
-              border: "1px solid var(--tkd-border)",
-            }}
-          >
-            {t.roman}
-          </button>
-        ))
-      )}
-    </div>
-  );
 }
 
 export function HanbeonEditor({ editId, prefillBelt, onSaved, onCancel }: {
@@ -69,13 +40,23 @@ export function HanbeonEditor({ editId, prefillBelt, onSaved, onCancel }: {
     if (!ataque.trim() || saving) return;
     setSaving(true);
     try {
-      const entry = { id: editId ?? `hb-c-${Date.now()}`, numero: editId ? (existing?.numero ?? HANBEON.length + 1) : HANBEON.length + 1, ataque: ataque.trim(), belt: belt || undefined, passos };
+      // Próximo número = maior existente + 1 (evita repetidos depois de eliminar)
+      const nextNumero = HANBEON.reduce((m, h) => Math.max(m, h.numero), 0) + 1;
+      const entry: HanbeonKyorugi = {
+        id: editId ?? `hb-c-${Date.now()}`,
+        numero: existing?.numero ?? nextNumero,
+        ataque: ataque.trim(),
+        belt: belt || undefined,
+        passos: passos
+          .map(p => ({ ...p, descricao: p.descricao.trim() }))
+          .filter(p => p.descricao || p.techniqueIds?.length),
+      };
       const updated = editId ? HANBEON.map(h => h.id === editId ? entry : h) : [...HANBEON, entry];
       await saveResource("hanbeon", updated);
       setHanbeon(updated);
       onSaved(entry.id);
     } catch (err: any) {
-      alert(err.message?.includes("fetch") ? DEV_ONLY_MSG : (err.message ?? String(err)));
+      alert(err.message ?? String(err));
     } finally { setSaving(false); }
   };
 
@@ -91,24 +72,7 @@ export function HanbeonEditor({ editId, prefillBelt, onSaved, onCancel }: {
             style={{ background: "var(--tkd-surface)", border: "1px solid var(--tkd-border)", color: "var(--tkd-text)", fontSize: 15 }} />
         </div>
 
-        <div>
-          <label className="font-display block mb-1.5" style={{ fontSize: 11, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--tkd-muted)" }}>Cinto</label>
-          <div className="flex flex-wrap gap-1.5">
-            <button type="button" onClick={() => setBelt("")}
-              className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 font-display transition-colors"
-              style={{ fontSize: 10, letterSpacing: "0.04em", textTransform: "uppercase", background: !belt ? "var(--tkd-surface)" : "transparent", color: !belt ? "var(--tkd-text)" : "var(--tkd-muted)", border: `1px solid ${!belt ? "var(--tkd-muted)" : "var(--tkd-border)"}` }}>
-              Nenhum
-            </button>
-            {BELTS.map(b => (
-              <button key={b.id} type="button" onClick={() => setBelt(b.id)}
-                className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 font-display transition-colors"
-                style={{ fontSize: 10, letterSpacing: "0.04em", textTransform: "uppercase", background: belt === b.id ? b.color + "22" : "transparent", color: belt === b.id ? b.color : "var(--tkd-muted)", border: `1px solid ${belt === b.id ? b.color : "var(--tkd-border)"}` }}>
-                <BeltStrip color={b.color} stripe={b.stripe} width={22} height={6} />
-                {b.label}
-              </button>
-            ))}
-          </div>
-        </div>
+        <BeltPicker value={belt} onChange={setBelt} />
 
         <div>
           <span className="font-display" style={{ fontSize: 11, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--tkd-muted)" }}>Passos</span>
@@ -155,7 +119,7 @@ export function HanbeonEditor({ editId, prefillBelt, onSaved, onCancel }: {
           </button>
         </div>
 
-        <button type="button" onClick={handleSave} disabled={!ataque.trim()} className="w-full rounded-xl py-3.5 font-display"
+        <button type="button" onClick={handleSave} disabled={!ataque.trim() || saving} className="w-full rounded-xl py-3.5 font-display"
           style={{ fontSize: 13, letterSpacing: "0.08em", textTransform: "uppercase",
             background: ataque.trim() ? "var(--tkd-red)" : "var(--tkd-border)",
             color: ataque.trim() ? "#fff" : "var(--tkd-muted)" }}>

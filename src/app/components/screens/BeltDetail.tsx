@@ -26,6 +26,7 @@ export function BeltDetail({
   const { isAdmin } = useAdmin();
   const belt = BELTS.find(b => b.id === beltId);
   if (!belt) return null;
+  const beltColor = belt.color;
 
   const poomsaeList = POOMSAE.filter(p => p.belt === beltId);
   const hanbeonList = HANBEON.filter(h => h.belt === beltId);
@@ -95,7 +96,7 @@ export function BeltDetail({
               >
                 <div
                   className="shrink-0 rounded-full"
-                  style={{ width: 4, height: 30, background: belt.color }}
+                  style={{ width: 4, height: 30, background: beltColor }}
                 />
                 <span style={{ fontSize: 14, color: "var(--tkd-text)", flex: 1 }}>{item.label}</span>
                 <span style={{ fontSize: 18, color: "var(--tkd-muted)" }}>›</span>

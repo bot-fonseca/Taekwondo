@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { CATEGORIES, TECHNIQUES, setTechniques } from "../../data/taekwondo";
 import { useAdmin } from "../../context/AdminContext";
-import { saveResource, DEV_ONLY_MSG } from "../../hooks/useAdminSave";
+import { saveResource } from "../../hooks/useAdminSave";
 import { CategoryTag } from "../atoms";
 import { Trigram } from "../Trigram";
 import { DetailHeader } from "./DetailHeader";
@@ -73,7 +73,7 @@ export function TechniqueDetail({ id, onBack, onEdit }: {
       setTechniques(updated);
       onBack();
     } catch (err: any) {
-      alert(err.message?.includes("fetch") ? DEV_ONLY_MSG : (err.message ?? String(err)));
+      alert(err.message ?? String(err));
     }
   };
 

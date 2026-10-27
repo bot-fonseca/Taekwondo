@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { CATEGORIES, TECHNIQUES, type CategoryId, type Technique, setTechniques } from "../../data/taekwondo";
-import { saveResource, DEV_ONLY_MSG } from "../../hooks/useAdminSave";
+import { saveResource } from "../../hooks/useAdminSave";
 import { DetailHeader } from "./DetailHeader";
 
 export function TechniqueEditor({ editId, onSaved, onCancel }: {
@@ -41,7 +41,7 @@ export function TechniqueEditor({ editId, onSaved, onCancel }: {
       setTechniques(updated);
       onSaved(fields.id);
     } catch (err: any) {
-      alert(err.message?.includes("fetch") ? DEV_ONLY_MSG : (err.message ?? String(err)));
+      alert(err.message ?? String(err));
     } finally {
       setSaving(false);
     }

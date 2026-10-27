@@ -1,9 +1,10 @@
 // ── Tipos e dados para Hanbeon Kyorugi, Ho Shin Sul e Sequências ────────────
-// Os dados editáveis estão em hanbeon.json e hoshin.json — editar via admin mode.
+// Os dados editáveis estão em hanbeon.json, hoshin.json e sequences.json — editar via admin mode.
 
 import hanbeonJson   from "./hanbeon.json";
 import hoshinJson    from "./hoshin.json";
 import sequencesJson from "./sequences.json";
+import { notifyDataChanged } from "./store";
 
 // ── Cintos (띠) ──────────────────────────────────────────────────────────────
 export interface Belt {
@@ -45,7 +46,7 @@ export interface HanbeonKyorugi {
 }
 
 export let HANBEON: HanbeonKyorugi[] = hanbeonJson as HanbeonKyorugi[];
-export function setHanbeon(data: HanbeonKyorugi[]) { HANBEON = data; }
+export function setHanbeon(data: HanbeonKyorugi[]) { HANBEON = data; notifyDataChanged(); }
 
 // ── Ho Shin Sul (護身術) ─────────────────────────────────────────────────────
 export interface HoShinSulStep {
@@ -61,7 +62,7 @@ export interface HoShinSul {
 }
 
 export let HO_SHIN_SUL: HoShinSul[] = hoshinJson as HoShinSul[];
-export function setHoShinSul(data: HoShinSul[]) { HO_SHIN_SUL = data; }
+export function setHoShinSul(data: HoShinSul[]) { HO_SHIN_SUL = data; notifyDataChanged(); }
 
 // ── Sequências ───────────────────────────────────────────────────────────────
 export interface SequenciaStep {
@@ -81,4 +82,4 @@ export interface Sequencia {
 }
 
 export let SEQUENCIAS: Sequencia[] = sequencesJson as Sequencia[];
-export function setSequencias(data: Sequencia[]) { SEQUENCIAS = data; }
+export function setSequencias(data: Sequencia[]) { SEQUENCIAS = data; notifyDataChanged(); }

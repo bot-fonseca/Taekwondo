@@ -1,6 +1,5 @@
 import { HANBEON } from "../../data/pratica";
 import { useAdmin } from "../../context/AdminContext";
-import { DetailHeader } from "./DetailHeader";
 
 export function HanbeonScreen({ onOpen, onNovo }: { onOpen: (id: string) => void; onNovo: () => void }) {
   const { isAdmin } = useAdmin();

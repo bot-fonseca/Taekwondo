@@ -21,8 +21,7 @@ function figmaAssetResolver() {
 }
 
 // ── Plugin de API admin (só activo em dev) ──────────────────────────────────
-// Permite ao admin escrever directamente nos ficheiros JSON de dados e fazer
-// git commit + push sem sair da app.
+// Permite ao admin escrever directamente nos ficheiros JSON de dados sem sair da app.
 function adminApiPlugin() {
   const DATA_DIR = path.resolve(__dirname, 'src/app/data')
   const ALLOWED  = new Set(['techniques', 'hanbeon', 'hoshin', 'sequences', 'poomsae'])
@@ -33,21 +32,32 @@ function adminApiPlugin() {
       server.middlewares.use(async (req: any, res: any, next: any) => {
         if (!req.url?.startsWith('/api/admin/')) return next()
 
+        res.setHeader('Content-Type', 'application/json')
+        const reject = (status: number, error: string) => {
+          res.statusCode = status
+          res.end(JSON.stringify({ error }))
+        }
+
+        // Só pedidos POST JSON da própria app — bloqueia escritas vindas de outros sites
+        // (exigir application/json obriga o browser a fazer preflight CORS, que falha aqui).
+        if (req.method !== 'POST') return reject(405, 'Método não permitido.')
+        if (!String(req.headers['content-type'] ?? '').startsWith('application/json')) {
+          return reject(415, 'Content-Type tem de ser application/json.')
+        }
+        const origin = req.headers.origin
+        if (origin && URL.parse(origin)?.host !== req.headers.host) return reject(403, 'Origem não permitida.')
+
         // Parse body
         const chunks: Buffer[] = []
         for await (const chunk of req) chunks.push(chunk)
         let body: any = {}
         try { body = JSON.parse(Buffer.concat(chunks).toString()) } catch { /**/ }
 
-        res.setHeader('Content-Type', 'application/json')
-
         try {
           if (req.url === '/api/admin/save') {
             const { resource, data } = body
-            if (!ALLOWED.has(resource)) {
-              res.statusCode = 400
-              return res.end(JSON.stringify({ error: 'Recurso inválido.' }))
-            }
+            if (!ALLOWED.has(resource)) return reject(400, 'Recurso inválido.')
+            if (!Array.isArray(data)) return reject(400, 'Dados inválidos (esperada uma lista).')
             const filePath = path.join(DATA_DIR, `${resource}.json`)
             fs.writeFileSync(filePath, JSON.stringify(data, null, 2) + '\n', 'utf8')
             res.end(JSON.stringify({ ok: true }))

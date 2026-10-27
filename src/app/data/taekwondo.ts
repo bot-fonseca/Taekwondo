@@ -4,6 +4,7 @@
 
 import techniquesJson from "./techniques.json";
 import poomsaeJson from "./poomsae.json";
+import { notifyDataChanged } from "./store";
 
 export type CategoryId = "seogi" | "jireugi" | "makgi" | "chagi";
 
@@ -34,7 +35,7 @@ export const CATEGORIES: Category[] = [
 export let TECHNIQUES: Technique[] = techniquesJson as Technique[];
 
 // Permite ao admin substituir os dados em runtime (após guardar via API)
-export function setTechniques(data: Technique[]) { TECHNIQUES = data; }
+export function setTechniques(data: Technique[]) { TECHNIQUES = data; notifyDataChanged(); }
 
 // ── Poomsae ─────────────────────────────────────────────────────
 export interface PoomsaeStep {
@@ -61,7 +62,7 @@ export interface Poomsae {
 
 export let POOMSAE: Poomsae[] = poomsaeJson as unknown as Poomsae[];
 
-export function setPoomsae(data: Poomsae[]) { POOMSAE = data; }
+export function setPoomsae(data: Poomsae[]) { POOMSAE = data; notifyDataChanged(); }
 
 // ── Terminologia geral ──────────────────────────────────────────
 export interface TermEntry {

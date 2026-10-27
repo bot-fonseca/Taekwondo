@@ -1,6 +1,7 @@
-import { HO_SHIN_SUL } from "../../data/pratica";
+import { HO_SHIN_SUL, setHoShinSul } from "../../data/pratica";
 import { TECHNIQUES } from "../../data/taekwondo";
 import { useAdmin } from "../../context/AdminContext";
+import { saveResource } from "../../hooks/useAdminSave";
 import { DetailHeader } from "./DetailHeader";
 
 export function HoShinDetail({ id, onBack, onOpenTechnique, onEdit }: {
@@ -16,14 +17,12 @@ export function HoShinDetail({ id, onBack, onOpenTechnique, onEdit }: {
   const handleDelete = async () => {
     if (!window.confirm(`Eliminar "${hs.situacao}"?`)) return;
     try {
-      const { HO_SHIN_SUL: H, setHoShinSul } = await import("../../data/pratica");
-      const { saveResource, DEV_ONLY_MSG } = await import("../../hooks/useAdminSave");
-      const updated = H.filter((h: any) => h.id !== id);
+      const updated = HO_SHIN_SUL.filter(h => h.id !== id);
       await saveResource("hoshin", updated);
       setHoShinSul(updated);
       onBack();
     } catch (err: any) {
-      alert(err.message?.includes("fetch") ? "Só disponível em modo dev (pnpm dev)" : (err.message ?? String(err)));
+      alert(err.message ?? String(err));
     }
   };
 

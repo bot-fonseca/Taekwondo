@@ -1,6 +1,7 @@
-import { HANBEON } from "../../data/pratica";
+import { HANBEON, setHanbeon } from "../../data/pratica";
 import { TECHNIQUES } from "../../data/taekwondo";
 import { useAdmin } from "../../context/AdminContext";
+import { saveResource } from "../../hooks/useAdminSave";
 import { DetailHeader } from "./DetailHeader";
 
 const ROLE_COLOR = { atacante: "var(--tkd-red)", defensor: "var(--tkd-blue)" } as const;
@@ -19,14 +20,12 @@ export function HanbeonDetail({ id, onBack, onOpenTechnique, onEdit }: {
   const handleDelete = async () => {
     if (!window.confirm(`Eliminar "${hb.ataque}"?`)) return;
     try {
-      const { HANBEON: H, setHanbeon } = await import("../../data/pratica");
-      const { saveResource, DEV_ONLY_MSG } = await import("../../hooks/useAdminSave");
-      const updated = H.filter((h: any) => h.id !== id);
+      const updated = HANBEON.filter(h => h.id !== id);
       await saveResource("hanbeon", updated);
       setHanbeon(updated);
       onBack();
     } catch (err: any) {
-      alert(err.message?.includes("fetch") ? "Só disponível em modo dev (pnpm dev)" : (err.message ?? String(err)));
+      alert(err.message ?? String(err));
     }
   };
 

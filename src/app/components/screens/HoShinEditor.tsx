@@ -1,32 +1,11 @@
 import { useState } from "react";
-import { CATEGORIES, TECHNIQUES } from "../../data/taekwondo";
-import { HO_SHIN_SUL, setHoShinSul, BELTS, type HoShinSulStep } from "../../data/pratica";
-import { saveResource, DEV_ONLY_MSG } from "../../hooks/useAdminSave";
-import { BeltStrip } from "../BeltStrip";
+import { HO_SHIN_SUL, setHoShinSul, type HoShinSul, type HoShinSulStep } from "../../data/pratica";
+import { saveResource } from "../../hooks/useAdminSave";
+import { BeltPicker } from "../BeltPicker";
+import { TechniqueMultiPicker } from "../TechniqueMultiPicker";
 import { DetailHeader } from "./DetailHeader";
 
 function newStep(): HoShinSulStep { return { descricao: "", techniqueIds: [] }; }
-
-function TechniqueMultiPicker({ values, onChange }: { values: string[]; onChange: (ids: string[]) => void }) {
-  const toggle = (id: string) =>
-    onChange(values.includes(id) ? values.filter(x => x !== id) : [...values, id]);
-  return (
-    <div className="flex flex-wrap gap-1.5 mt-1">
-      {CATEGORIES.map(cat =>
-        TECHNIQUES.filter(t => t.category === cat.id).map(t => (
-          <button key={t.id} type="button" onClick={() => toggle(t.id)}
-            className="rounded-lg px-2.5 py-1 font-display transition-colors"
-            style={{ fontSize: 10, letterSpacing: "0.04em", textTransform: "uppercase",
-              background: values.includes(t.id) ? "var(--tkd-blue)" : "var(--tkd-bg)",
-              color: values.includes(t.id) ? "#fff" : "var(--tkd-muted)",
-              border: "1px solid var(--tkd-border)" }}>
-            {t.roman}
-          </button>
-        ))
-      )}
-    </div>
-  );
-}
 
 export function HoShinEditor({ editId, prefillBelt, onSaved, onCancel }: {
   editId?: string;
@@ -54,13 +33,20 @@ export function HoShinEditor({ editId, prefillBelt, onSaved, onCancel }: {
     if (!situacao.trim() || saving) return;
     setSaving(true);
     try {
-      const entry = { id: editId ?? `hs-c-${Date.now()}`, situacao: situacao.trim(), belt: belt || undefined, passos };
+      const entry: HoShinSul = {
+        id: editId ?? `hs-c-${Date.now()}`,
+        situacao: situacao.trim(),
+        belt: belt || undefined,
+        passos: passos
+          .map(p => ({ ...p, descricao: p.descricao.trim() }))
+          .filter(p => p.descricao || p.techniqueIds?.length),
+      };
       const updated = editId ? HO_SHIN_SUL.map(h => h.id === editId ? entry : h) : [...HO_SHIN_SUL, entry];
       await saveResource("hoshin", updated);
       setHoShinSul(updated);
       onSaved(entry.id);
     } catch (err: any) {
-      alert(err.message?.includes("fetch") ? DEV_ONLY_MSG : (err.message ?? String(err)));
+      alert(err.message ?? String(err));
     } finally { setSaving(false); }
   };
 
@@ -76,24 +62,7 @@ export function HoShinEditor({ editId, prefillBelt, onSaved, onCancel }: {
             style={{ background: "var(--tkd-surface)", border: "1px solid var(--tkd-border)", color: "var(--tkd-text)", fontSize: 15 }} />
         </div>
 
-        <div>
-          <label className="font-display block mb-1.5" style={{ fontSize: 11, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--tkd-muted)" }}>Cinto</label>
-          <div className="flex flex-wrap gap-1.5">
-            <button type="button" onClick={() => setBelt("")}
-              className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 font-display transition-colors"
-              style={{ fontSize: 10, letterSpacing: "0.04em", textTransform: "uppercase", background: !belt ? "var(--tkd-surface)" : "transparent", color: !belt ? "var(--tkd-text)" : "var(--tkd-muted)", border: `1px solid ${!belt ? "var(--tkd-muted)" : "var(--tkd-border)"}` }}>
-              Nenhum
-            </button>
-            {BELTS.map(b => (
-              <button key={b.id} type="button" onClick={() => setBelt(b.id)}
-                className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 font-display transition-colors"
-                style={{ fontSize: 10, letterSpacing: "0.04em", textTransform: "uppercase", background: belt === b.id ? b.color + "22" : "transparent", color: belt === b.id ? b.color : "var(--tkd-muted)", border: `1px solid ${belt === b.id ? b.color : "var(--tkd-border)"}` }}>
-                <BeltStrip color={b.color} stripe={b.stripe} width={22} height={6} />
-                {b.label}
-              </button>
-            ))}
-          </div>
-        </div>
+        <BeltPicker value={belt} onChange={setBelt} />
 
         <div>
           <span className="font-display" style={{ fontSize: 11, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--tkd-muted)" }}>Passos</span>
@@ -123,11 +92,11 @@ export function HoShinEditor({ editId, prefillBelt, onSaved, onCancel }: {
           </button>
         </div>
 
-        <button type="button" onClick={handleSave} disabled={!situacao.trim()} className="w-full rounded-xl py-3.5 font-display"
+        <button type="button" onClick={handleSave} disabled={!situacao.trim() || saving} className="w-full rounded-xl py-3.5 font-display"
           style={{ fontSize: 13, letterSpacing: "0.08em", textTransform: "uppercase",
             background: situacao.trim() ? "var(--tkd-red)" : "var(--tkd-border)",
             color: situacao.trim() ? "#fff" : "var(--tkd-muted)" }}>
-          {editId ? "Guardar alterações" : "Criar Ho Shin Sul"}
+          {saving ? "A guardar..." : (editId ? "Guardar alterações" : "Criar Ho Shin Sul")}
         </button>
         <div style={{ height: 16 }} />
       </div>

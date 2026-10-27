@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { POOMSAE, setPoomsae } from "../../data/taekwondo";
 import { useAdmin } from "../../context/AdminContext";
-import { saveResource, DEV_ONLY_MSG } from "../../hooks/useAdminSave";
+import { saveResource } from "../../hooks/useAdminSave";
 import { SectionTitle } from "../atoms";
 import { Trigram } from "../Trigram";
 
@@ -20,7 +20,7 @@ export function PoomsaeScreen({ onOpen, onNova }: {
       await saveResource("poomsae", updated);
       setPoomsae(updated);
     } catch (err: any) {
-      alert(err.message?.includes("fetch") ? DEV_ONLY_MSG : (err.message ?? String(err)));
+      alert(err.message ?? String(err));
     }
   };
 

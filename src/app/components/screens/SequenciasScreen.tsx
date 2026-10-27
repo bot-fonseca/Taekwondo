@@ -1,6 +1,5 @@
 import { SEQUENCIAS } from "../../data/pratica";
 import { useAdmin } from "../../context/AdminContext";
-import { DetailHeader } from "./DetailHeader";
 
 export function SequenciasScreen({ onOpen, onNova }: {
   onOpen: (id: string) => void;

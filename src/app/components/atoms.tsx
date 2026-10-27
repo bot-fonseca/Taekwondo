@@ -55,20 +55,3 @@ export function CategoryTag({ label }: { label: string }) {
     </span>
   );
 }
-
-// Cartão base
-export function Card({ children, onClick, className = "" }: { children: ReactNode; onClick?: () => void; className?: string }) {
-  const Comp = onClick ? "button" : "div";
-  return (
-    <Comp
-      onClick={onClick}
-      className={`text-left w-full rounded-xl transition-colors ${className}`}
-      style={{
-        background: "var(--tkd-surface)",
-        border: "1px solid var(--tkd-border)",
-      }}
-    >
-      {children}
-    </Comp>
-  );
-}

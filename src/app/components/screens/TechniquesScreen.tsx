@@ -1,16 +1,9 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import { CATEGORIES, TECHNIQUES, type CategoryId } from "../../data/taekwondo";
 import { useAdmin } from "../../context/AdminContext";
 import { useTechniqueOrder } from "../../hooks/useTechniqueOrder";
 import { SectionTitle, HangulPair } from "../atoms";
-
-const DECOR: Record<CategoryId, string> = {
-  seogi: "☷",
-  jireugi: "☲",
-  makgi: "☵",
-  chagi: "☳",
-};
 
 export function TechniquesScreen({ onOpen, onNova, initialFilter = "seogi", onFilterChange }: {
   onOpen: (id: string) => void;
@@ -20,31 +13,30 @@ export function TechniquesScreen({ onOpen, onNova, initialFilter = "seogi", onFi
 }) {
   const [filter, setFilter] = useState<CategoryId>(initialFilter);
   const { isAdmin } = useAdmin();
-  const { getOrdered, move, version } = useTechniqueOrder();
+  const { getOrdered, move } = useTechniqueOrder();
 
   const handleFilter = (f: CategoryId) => {
     setFilter(f);
     onFilterChange?.(f);
   };
 
-  const list = useMemo(() => {
-    const filtered = TECHNIQUES.filter(t => t.category === filter);
-    return getOrdered(filter, filtered);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filter, TECHNIQUES.length, version]);
+  // Ordem personalizada guardada localmente; move() força novo render
+  const list = getOrdered(filter, TECHNIQUES.filter(t => t.category === filter));
 
   return (
     <div className="px-4 pt-6">
       <div className="flex items-center justify-between mb-1">
         <SectionTitle decor="☲">Técnicas soltas</SectionTitle>
-        <button
-          type="button"
-          onClick={onNova}
-          className="rounded-xl px-3 py-1.5 font-display transition-opacity active:opacity-70"
-          style={{ fontSize: 11, letterSpacing: "0.06em", textTransform: "uppercase", background: "var(--tkd-red)", color: "#fff" }}
-        >
-          + Nova
-        </button>
+        {isAdmin && (
+          <button
+            type="button"
+            onClick={onNova}
+            className="rounded-xl px-3 py-1.5 font-display transition-opacity active:opacity-70"
+            style={{ fontSize: 11, letterSpacing: "0.06em", textTransform: "uppercase", background: "var(--tkd-red)", color: "#fff" }}
+          >
+            + Nova
+          </button>
+        )}
       </div>
 
       {/* Filtro por categoria */}
