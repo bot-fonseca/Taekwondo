@@ -1,6 +1,6 @@
 import { Home, Hand, Grid3x3, BookOpen, Dumbbell, Lock, LockOpen, Sun, Moon } from "lucide-react";
 import type { TabId } from "./BottomNav";
-import { useAdmin } from "../context/AdminContext";
+import { ADMIN_AVAILABLE, useAdmin } from "../context/AdminContext";
 import { useTheme } from "../context/ThemeContext";
 
 const TABS: { id: TabId; label: string; Icon: typeof Home }[] = [
@@ -69,6 +69,7 @@ export function SideNav({ active, onChange }: { active: TabId; onChange: (t: Tab
             {theme === "dark" ? "Modo claro" : "Modo escuro"}
           </span>
         </button>
+        {ADMIN_AVAILABLE && (
         <button
           type="button"
           onClick={isAdmin ? lock : unlock}
@@ -80,6 +81,7 @@ export function SideNav({ active, onChange }: { active: TabId; onChange: (t: Tab
             {isAdmin ? "Admin (activo)" : "Admin"}
           </span>
         </button>
+        )}
         {isAdmin && (
           <button type="button" onClick={changePin}
             className="flex items-center gap-2 px-3 py-2 rounded-xl transition-colors w-full"

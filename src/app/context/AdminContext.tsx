@@ -4,6 +4,9 @@ const PIN_KEY     = "tkd_admin_pin";
 const SESSION_KEY = "tkd_is_admin";
 const DEFAULT_PIN = "4321";
 
+/** O modo admin só existe no servidor de dev (pnpm dev) — no site publicado não há onde guardar. */
+export const ADMIN_AVAILABLE = import.meta.env.DEV;
+
 interface AdminCtx {
   isAdmin: boolean;
   unlock: () => void;
@@ -24,10 +27,11 @@ export function useAdmin() {
 
 export function AdminProvider({ children }: { children: ReactNode }) {
   const [isAdmin, setIsAdmin] = useState(
-    () => sessionStorage.getItem(SESSION_KEY) === "true"
+    () => ADMIN_AVAILABLE && sessionStorage.getItem(SESSION_KEY) === "true"
   );
 
   const unlock = () => {
+    if (!ADMIN_AVAILABLE) return;
     const stored = localStorage.getItem(PIN_KEY) ?? DEFAULT_PIN;
     const input = window.prompt("PIN de administrador:");
     if (input === null) return;            // cancelled

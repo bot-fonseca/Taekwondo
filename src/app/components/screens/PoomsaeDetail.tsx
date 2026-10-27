@@ -8,7 +8,7 @@ const IMG_EXTS = ["jpg", "jpeg", "png", "webp"];
 
 function PoomsaeImage({ id, image }: { id: string; image?: string }) {
   const [extIdx, setExtIdx] = useState(0);
-  const src = `/images/poomsae/${image ? image : `${id}.${IMG_EXTS[extIdx]}`}`;
+  const src = `${import.meta.env.BASE_URL}images/poomsae/${image ? image : `${id}.${IMG_EXTS[extIdx]}`}`;
 
   if (!image && extIdx >= IMG_EXTS.length) return null;
 

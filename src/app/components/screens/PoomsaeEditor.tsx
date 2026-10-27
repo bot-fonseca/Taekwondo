@@ -223,7 +223,7 @@ export function PoomsaeEditor({ editId, onSaved, onCancel }: {
           />
           {image.trim() && (
             <img
-              src={`/images/poomsae/${image.trim()}`}
+              src={`${import.meta.env.BASE_URL}images/poomsae/${image.trim()}`}
               alt="pré-visualização"
               className="w-full rounded-xl mt-2"
               style={{ maxHeight: 200, objectFit: "contain", background: "var(--tkd-bg)" }}

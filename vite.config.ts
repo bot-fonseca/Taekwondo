@@ -3,6 +3,7 @@ import path from 'path'
 import fs from 'fs'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
+import { VitePWA } from 'vite-plugin-pwa'
 
 // VITE_BASE_PATH is set by the GitHub Actions workflow for GitHub Pages deployment
 const base = process.env.VITE_BASE_PATH ?? '/'
@@ -68,6 +69,38 @@ export default defineConfig({
     adminApiPlugin(),
     react(),
     tailwindcss(),
+    // PWA: instalável no telemóvel e funciona offline (pré-carrega a app e todas as imagens)
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['icon.svg', 'apple-touch-icon.png'],
+      manifest: {
+        name: 'Taekwondo',
+        short_name: 'Taekwondo',
+        description: 'Terminologia, técnicas e poomsae de Taekwondo.',
+        lang: 'pt-PT',
+        display: 'standalone',
+        orientation: 'portrait',
+        background_color: '#1C2128',
+        theme_color: '#1C2128',
+        icons: [
+          { src: 'icon-192.png', sizes: '192x192', type: 'image/png' },
+          { src: 'icon-512.png', sizes: '512x512', type: 'image/png' },
+          { src: 'icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+        ],
+      },
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,svg,png,jpg,jpeg,webp}'],
+        runtimeCaching: [{
+          urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\//,
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'google-fonts',
+            expiration: { maxEntries: 20, maxAgeSeconds: 60 * 60 * 24 * 365 },
+            cacheableResponse: { statuses: [0, 200] },
+          },
+        }],
+      },
+    }),
   ],
   resolve: {
     alias: {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BottomNav, type TabId } from "./components/BottomNav";
 import { SideNav } from "./components/SideNav";
-import { useAdmin } from "./context/AdminContext";
+import { ADMIN_AVAILABLE, useAdmin } from "./context/AdminContext";
 import { HomeScreen } from "./components/screens/HomeScreen";
 import { TechniquesScreen } from "./components/screens/TechniquesScreen";
 import { TechniqueDetail } from "./components/screens/TechniqueDetail";
@@ -272,6 +272,7 @@ export default function App() {
           </button>
 
           {/* Admin toggle — mobile only, canto inferior direito acima da bottom nav */}
+          {ADMIN_AVAILABLE && (
           <button
             type="button"
             onClick={isAdmin ? lock : unlock}
@@ -288,6 +289,7 @@ export default function App() {
           >
             {isAdmin ? <LockOpen size={16} /> : <Lock size={16} />}
           </button>
+          )}
         </div>
       </div>
 

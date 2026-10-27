@@ -13,7 +13,7 @@ function TechniqueImage({ id, suffix = "", alt, className = "" }: { id: string; 
   if (extIdx >= EXTS.length) return null;
   return (
     <img
-      src={`/images/techniques/${id}${suffix}.${EXTS[extIdx]}`}
+      src={`${import.meta.env.BASE_URL}images/techniques/${id}${suffix}.${EXTS[extIdx]}`}
       alt={alt}
       className={`w-full rounded-2xl ${className}`}
       style={{ maxHeight: 260, objectFit: "contain", background: "var(--tkd-surface)" }}
@@ -29,7 +29,7 @@ function TechniqueImages({ id, alt, image }: { id: string; alt: string; image?: 
     return (
       <div className="mt-4">
         <img
-          src={`/images/${image}`}
+          src={`${import.meta.env.BASE_URL}images/${image}`}
           alt={alt}
           className="w-full rounded-2xl"
           style={{ maxHeight: 320, objectFit: "contain", background: "var(--tkd-surface)" }}
@@ -43,7 +43,7 @@ function TechniqueImages({ id, alt, image }: { id: string; alt: string; image?: 
       <TechniqueImage id={id} alt={alt} />
       {hasSecond && (
         <img
-          src={`/images/techniques/${id}_2.jpg`}
+          src={`${import.meta.env.BASE_URL}images/techniques/${id}_2.jpg`}
           alt={`${alt} — diagrama`}
           className="w-full rounded-2xl"
           style={{ maxHeight: 260, objectFit: "contain", background: "var(--tkd-surface)" }}
