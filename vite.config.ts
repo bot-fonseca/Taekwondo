@@ -7,19 +7,6 @@ import react from '@vitejs/plugin-react'
 // VITE_BASE_PATH is set by the GitHub Actions workflow for GitHub Pages deployment
 const base = process.env.VITE_BASE_PATH ?? '/'
 
-
-function figmaAssetResolver() {
-  return {
-    name: 'figma-asset-resolver',
-    resolveId(id) {
-      if (id.startsWith('figma:asset/')) {
-        const filename = id.replace('figma:asset/', '')
-        return path.resolve(__dirname, 'src/assets', filename)
-      }
-    },
-  }
-}
-
 // ── Plugin de API admin (só activo em dev) ──────────────────────────────────
 // Permite ao admin escrever directamente nos ficheiros JSON de dados sem sair da app.
 function adminApiPlugin() {
@@ -78,10 +65,7 @@ function adminApiPlugin() {
 export default defineConfig({
   base,
   plugins: [
-    figmaAssetResolver(),
     adminApiPlugin(),
-    // The React and Tailwind plugins are both required for Make, even if
-    // Tailwind is not being actively used – do not remove them
     react(),
     tailwindcss(),
   ],
