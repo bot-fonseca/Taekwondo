@@ -21,6 +21,7 @@ import { TechniqueEditor } from "./components/screens/TechniqueEditor";
 import { PoomsaeEditor } from "./components/screens/PoomsaeEditor";
 import { BeltScreen } from "./components/screens/BeltScreen";
 import { BeltDetail } from "./components/screens/BeltDetail";
+import { FlashcardsScreen } from "./components/screens/FlashcardsScreen";
 import { Lock, LockOpen, Sun, Moon } from "lucide-react";
 import { useTheme } from "./context/ThemeContext";
 import { useDataVersion } from "./data/store";
@@ -68,6 +69,8 @@ export default function App() {
   const [tab, setTab] = useState<TabId>("home");
   const [detail, setDetail] = useState<Detail>(null);
   const [pratica, setPratica] = useState<PraticaView>({ screen: "hub" });
+  // Flashcards ficam montadas (escondidas) enquanto se vê uma técnica, para não perder a sessão
+  const [flashcards, setFlashcards] = useState(false);
   const [techFilter, setTechFilter] = useState<import("./data/taekwondo").CategoryId>("seogi");
   const { isAdmin, unlock, lock } = useAdmin();
   const { theme, toggle: toggleTheme } = useTheme();
@@ -79,8 +82,14 @@ export default function App() {
 
   const goTab = (t: TabId) => {
     setDetail(null);
+    setFlashcards(false);
     setPratica({ screen: "hub" });
     setTab(t);
+  };
+
+  const openBelt = (beltId: string) => {
+    goTab("pratica");
+    setPratica({ screen: "belt-detail", beltId });
   };
 
   function renderPratica() {
@@ -221,7 +230,7 @@ export default function App() {
 
     switch (tab) {
       case "home":
-        return <HomeScreen onOpenTechnique={openTechnique} onOpenPoomsae={openPoomsae} onGoTab={goTab} />;
+        return <HomeScreen onOpenTechnique={openTechnique} onOpenPoomsae={openPoomsae} onGoTab={goTab} onOpenBelt={openBelt} onOpenFlashcards={() => setFlashcards(true)} />;
       case "tecnicas":
         return <TechniquesScreen onOpen={openTechnique} onNova={() => setDetail({ type: "technique-editor" })} initialFilter={techFilter} onFilterChange={setTechFilter} />;
       case "poomsae":
@@ -246,7 +255,14 @@ export default function App() {
           style={{ background: "var(--tkd-bg)" }}
         >
           {/* Conteúdo: em mobile deixa espaço para bottom nav, em desktop não */}
-          <main className="pb-28 md:pb-8 md:pt-4">{renderBody()}</main>
+          <main className="pb-28 md:pb-8 md:pt-4">
+            {flashcards && (
+              <div hidden={detail !== null}>
+                <FlashcardsScreen onBack={() => setFlashcards(false)} onOpenTechnique={openTechnique} />
+              </div>
+            )}
+            {(!flashcards || detail !== null) && renderBody()}
+          </main>
 
           {/* Bottom nav — só visível em mobile */}
           <div className="md:hidden">

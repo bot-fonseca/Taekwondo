@@ -9,6 +9,8 @@
   --tkd-red-soft: rgba(178, 58, 52, 0.14);
   --tkd-blue: #2B5A82;        /* acento azul (Taegeukgi) */
   --tkd-blue-soft: rgba(43, 90, 130, 0.16);
+  --tkd-green: #3E9B5F;       /* resposta certa (flashcards) */
+  --tkd-green-soft: rgba(62, 155, 95, 0.16);
   --tkd-border: rgba(139, 143, 148, 0.18);
   --tkd-nav-bg: rgba(28, 33, 40, 0.93);
 
@@ -28,6 +30,8 @@ html.light {
   --tkd-red-soft: rgba(178, 58, 52, 0.10);
   --tkd-blue: #2B5A82;
   --tkd-blue-soft: rgba(43, 90, 130, 0.12);
+  --tkd-green: #2F7D4B;
+  --tkd-green-soft: rgba(47, 125, 75, 0.12);
   --tkd-border: rgba(28, 33, 40, 0.12);
   --tkd-nav-bg: rgba(238, 233, 223, 0.94);
 }

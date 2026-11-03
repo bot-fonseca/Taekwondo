@@ -1,5 +1,6 @@
 import { BELTS, HANBEON, HO_SHIN_SUL, SEQUENCIAS } from "../../data/pratica";
 import { BeltStrip } from "../BeltStrip";
+import { useMyBelt } from "../../hooks/useMyBelt";
 import { SectionTitle } from "../atoms";
 
 export function BeltScreen({
@@ -13,6 +14,7 @@ export function BeltScreen({
   onAllHoShin: () => void;
   onAllSeq: () => void;
 }) {
+  const myBelt = useMyBelt();
   return (
     <div className="px-4 pt-6">
       <SectionTitle decor="띠">Prática</SectionTitle>
@@ -28,19 +30,25 @@ export function BeltScreen({
             HO_SHIN_SUL.filter(h => h.belt === belt.id).length +
             SEQUENCIAS.filter(s => s.belt === belt.id).length;
 
+          const isMine = belt.id === myBelt;
           return (
             <button
               key={belt.id}
               type="button"
               onClick={() => onOpenBelt(belt.id)}
               className="w-full text-left rounded-2xl px-5 py-4 flex items-center gap-4 transition-opacity active:opacity-70"
-              style={{ background: "var(--tkd-surface)", border: "1px solid var(--tkd-border)" }}
+              style={{ background: "var(--tkd-surface)", border: `1px solid ${isMine ? belt.color + "88" : "var(--tkd-border)"}` }}
             >
               {/* Belt stripe — vertical, com lista visível para cintos intermédios */}
               <BeltStrip color={belt.color} stripe={belt.stripe} width={44} height={8} vertical />
               <div className="flex-1 min-w-0">
                 <p style={{ fontSize: 17, fontWeight: 700, color: "var(--tkd-text)" }}>
                   {belt.label}
+                  {isMine && (
+                    <span className="font-display ml-2" style={{ fontSize: 10, letterSpacing: "0.06em", textTransform: "uppercase", color: belt.color, verticalAlign: "middle" }}>
+                      · O meu
+                    </span>
+                  )}
                 </p>
                 <p className="font-kr" style={{ fontSize: 13, color: "var(--tkd-muted)" }}>
                   {belt.korean} · {belt.roman}

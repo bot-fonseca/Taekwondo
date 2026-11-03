@@ -5,6 +5,7 @@ import hanbeonJson   from "./hanbeon.json";
 import hoshinJson    from "./hoshin.json";
 import sequencesJson from "./sequences.json";
 import { notifyDataChanged } from "./store";
+import { POOMSAE, type Poomsae } from "./taekwondo";
 
 // ── Cintos (띠) ──────────────────────────────────────────────────────────────
 export interface Belt {
@@ -29,6 +30,15 @@ export const BELTS: Belt[] = [
   { id: "vermelho-preto",  label: "Vermelho-Preto",  korean: "빨간검은 띠",  roman: "Ppalgan-Geomeun Ti", color: "#EF4444", stripe: "#374151" },
   { id: "preto",          label: "Preto",            korean: "검은 띠",     roman: "Geomeun Ti",        color: "#374151" },
 ];
+
+/** Poomsae a treinar num cinto. Um cinto intermédio (com lista) sem poomsae próprio
+ *  continua o do cinto anterior — ex: Taeguk 1 é para Branco e Branco-Amarelo. */
+export function poomsaeForBelt(beltId: string): Poomsae[] {
+  const own = POOMSAE.filter(p => p.belt === beltId);
+  const i = BELTS.findIndex(b => b.id === beltId);
+  if (own.length > 0 || i <= 0 || !BELTS[i].stripe) return own;
+  return POOMSAE.filter(p => p.belt === BELTS[i - 1].id);
+}
 
 // ── Hanbeon Kyorugi (一番競技) ────────────────────────────────────────────────
 export interface HanbeonStep {

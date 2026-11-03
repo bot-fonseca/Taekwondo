@@ -1,5 +1,5 @@
-import { BELTS, HANBEON, HO_SHIN_SUL, SEQUENCIAS } from "../../data/pratica";
-import { POOMSAE } from "../../data/taekwondo";
+import { BELTS, HANBEON, HO_SHIN_SUL, SEQUENCIAS, poomsaeForBelt } from "../../data/pratica";
+import { setMyBelt, useMyBelt } from "../../hooks/useMyBelt";
 import { BeltStrip } from "../BeltStrip";
 import { Trigram } from "../Trigram";
 import { useAdmin } from "../../context/AdminContext";
@@ -24,11 +24,12 @@ export function BeltDetail({
   onNovoHanbeon, onNovoHoShin, onNovaSeq,
 }: BeltDetailProps) {
   const { isAdmin } = useAdmin();
+  const myBelt = useMyBelt();
   const belt = BELTS.find(b => b.id === beltId);
   if (!belt) return null;
   const beltColor = belt.color;
 
-  const poomsaeList = POOMSAE.filter(p => p.belt === beltId);
+  const poomsaeList = poomsaeForBelt(beltId);
   const hanbeonList = HANBEON.filter(h => h.belt === beltId);
   const hoshinList  = HO_SHIN_SUL.filter(h => h.belt === beltId);
   const seqList     = SEQUENCIAS.filter(s => s.belt === beltId);
@@ -115,7 +116,7 @@ export function BeltDetail({
 
         {/* Belt header */}
         <div
-          className="rounded-2xl px-5 py-4 mb-6 flex items-center gap-4"
+          className="rounded-2xl px-5 py-4 mb-3 flex items-center gap-4"
           style={{ background: "var(--tkd-surface)", border: "1px solid var(--tkd-border)" }}
         >
           <BeltStrip color={belt.color} stripe={belt.stripe} width={56} height={10} vertical />
@@ -132,6 +133,23 @@ export function BeltDetail({
             {hanbeonList.length + hoshinList.length + seqList.length} exercícios
           </span>
         </div>
+
+        {/* O meu cinto — guardado neste browser */}
+        <button
+          type="button"
+          onClick={() => setMyBelt(myBelt === beltId ? null : beltId)}
+          className="w-full rounded-xl px-4 py-2.5 mb-6 font-display transition-opacity active:opacity-70"
+          style={{
+            fontSize: 12,
+            letterSpacing: "0.06em",
+            textTransform: "uppercase",
+            background: myBelt === beltId ? beltColor + "22" : "transparent",
+            color: myBelt === beltId ? beltColor : "var(--tkd-muted)",
+            border: `1px solid ${myBelt === beltId ? beltColor + "66" : "var(--tkd-border)"}`,
+          }}
+        >
+          {myBelt === beltId ? "✓ É o meu cinto" : "Este é o meu cinto"}
+        </button>
 
         {/* Poomsae */}
         {poomsaeList.length > 0 && (

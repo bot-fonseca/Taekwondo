@@ -1,14 +1,17 @@
 import { useMemo, useState } from "react";
-import { Search, Hand, Grid3x3, BookOpen, ChevronRight, Dumbbell } from "lucide-react";
+import { Search, Hand, Grid3x3, BookOpen, ChevronRight, Dumbbell, Layers } from "lucide-react";
 import { TECHNIQUES, POOMSAE, TERMINOLOGY, CATEGORIES } from "../../data/taekwondo";
 import { HangulPair } from "../atoms";
 import { Trigram } from "../Trigram";
 import type { TabId } from "../BottomNav";
+import { MyBeltCard } from "../MyBeltCard";
 
 interface Props {
   onOpenTechnique: (id: string) => void;
   onOpenPoomsae: (id: string) => void;
   onGoTab: (t: TabId) => void;
+  onOpenBelt: (beltId: string) => void;
+  onOpenFlashcards: () => void;
 }
 
 type Result =
@@ -20,7 +23,7 @@ function norm(s: string) {
   return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 }
 
-export function HomeScreen({ onOpenTechnique, onOpenPoomsae, onGoTab }: Props) {
+export function HomeScreen({ onOpenTechnique, onOpenPoomsae, onGoTab, onOpenBelt, onOpenFlashcards }: Props) {
   const [query, setQuery] = useState("");
 
   const results = useMemo<Result[]>(() => {
@@ -128,6 +131,27 @@ export function HomeScreen({ onOpenTechnique, onOpenPoomsae, onGoTab }: Props) {
         </div>
       ) : (
         <div className="mt-6">
+          <MyBeltCard onOpenBelt={onOpenBelt} />
+
+          <button
+            type="button"
+            onClick={onOpenFlashcards}
+            className="w-full rounded-xl px-4 py-4 mb-6 flex items-center gap-4"
+            style={{ background: "var(--tkd-red-soft)", border: "1px solid rgba(178,58,52,0.35)" }}
+          >
+            <span
+              className="flex items-center justify-center rounded-lg shrink-0"
+              style={{ width: 46, height: 46, background: "var(--tkd-red)" }}
+            >
+              <Layers size={22} color="#fff" />
+            </span>
+            <span className="flex-1 text-left">
+              <span className="block font-display" style={{ fontSize: 17, letterSpacing: "0.02em" }}>Flashcards</span>
+              <span style={{ fontSize: 13, color: "var(--tkd-muted)" }}>Liga o nome à descrição de cada técnica</span>
+            </span>
+            <ChevronRight size={20} color="var(--tkd-muted)" />
+          </button>
+
           <p style={{ fontSize: 13, color: "var(--tkd-muted)", letterSpacing: "0.06em", textTransform: "uppercase" }} className="font-display mb-3">
             Acesso rápido
           </p>
